@@ -7,8 +7,6 @@ tags:
   - security
 ---
 
-# From App Interface to System Shell: How It Can Happen
-
 Gaining shell access to a Windows server running VMware Horizon VDI, with only a restricted browser as the entry point. This blog post summarizes the clever techniques used to escalate from a browser to a full system shell, as detailed in an insightful article on System Weakness.
 
 ## The Scenario
