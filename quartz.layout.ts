@@ -1,6 +1,17 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+const explorerConfig = {
+  filterFn: (node: FileTrieNode) => !(node.data?.tags.includes("explorer-exclude") === true),
+  mapFn: (node: FileTrieNode) => {
+    // dont change name of root node
+    if (!node.isFolder) {
+      // set emoji for file/folder
+      node.displayName = "- " + node.displayName
+    }
+  },
+}
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -37,7 +48,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer(explorerConfig),
   ],
   right: [
     Component.RecentNotes({ showTags: false }),
@@ -62,7 +73,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer(explorerConfig),
   ],
   right: [],
 }
