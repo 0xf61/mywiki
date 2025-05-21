@@ -1,5 +1,8 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { Options } from "./quartz/components/Explorer"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
+import { FileTrieNode } from "./quartz/util/fileTrie"
 
 const explorerConfig = {
   filterFn: (node: FileTrieNode) => !(node.data?.tags.includes("explorer-exclude") === true),
@@ -10,6 +13,10 @@ const explorerConfig = {
       node.displayName = "- " + node.displayName
     }
   },
+}
+
+export const filterIndexFn: Options["filterFn"] = (node) => {
+  return node.displayName !== "index" && node.displayName !== "home"
 }
 
 // components shared across all pages
@@ -51,7 +58,18 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(explorerConfig),
   ],
   right: [
-    Component.RecentNotes({ showTags: false }),
+    Component.RecentNotes({
+      showTags: false,
+      limit: 5,
+      filter: (data: QuartzPluginData) => {
+        return data.slug ? !data.slug.endsWith("index") : true
+      },
+      sort: (pageA, pageB) => {
+        const dateA = pageA.dates?.modified?.getTime() ?? 0
+        const dateB = pageB.dates?.modified?.getTime() ?? 0
+        return dateB - dateA
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
     Component.Graph(),

@@ -1,6 +1,7 @@
 ---
 title: Systemctl in Docker
 draft: false
+date: 2025-05-11
 tags:
   - docker
 ---
