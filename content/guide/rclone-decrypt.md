@@ -1,7 +1,7 @@
 ---
 title: How to retrieve a ‘crypt’ password from a config file
 draft: false
-date: 2024-05-19
+date: 2024-05-24
 tags:
   - howto
   - crypt
@@ -10,6 +10,12 @@ tags:
 ---
 
 The password that is saved on `crypt` remotes on `~/.config/rclone.conf` is encrypted, but it can be recovered.
+
+Update: Now it can be retrieved using the `rclone reveal` command, which is much easier than the code below.
+
+```bash
+rclone reveal u6rMjUm4G1Wn7O88g7R2OPeBchFMNOMkX2PZwcyHegEjX68
+```
 
 I've copied some code from the rclone source and added a line to make it easier for people to run it.
 
