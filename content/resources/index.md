@@ -23,24 +23,19 @@ function submitUrl(event) {
   event.preventDefault();
 
   const url = document.getElementById('url').value;
-  const data = { url: url };
 
-  fetch('https://submit.kurt.link/submit', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: 'url=' + encodeURIComponent(url)
+  // Using GET request to the n8n webhook with URL as a query parameter
+  fetch('https://n8n.de2.in/webhook/submit?url=' + encodeURIComponent(url), {
+    method: 'GET'
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
+  .then(response => {
+    console.log('Success:', response);
     alert('URL submitted successfully!');
-        document.getElementById('url').value = '';
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        alert('Error submitting URL. Please try again.');
-      });
-    }
-    </script>
+    document.getElementById('url').value = '';
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('Error submitting URL. Please try again.');
+  });
+}
+</script>
