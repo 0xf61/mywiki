@@ -1,7 +1,7 @@
 ---
 title: Terraform RDS module with DNS setup
 draft: false
-date: 2024-01-08
+date: 2025-06-04
 tags:
   - terraform
   - aws
@@ -61,4 +61,4 @@ resource "aws_route53_record" "db" {
 
 ```
 
-[Reference](https://karnwong.me/posts/rss.xml)
+[Reference](https://karnwong.me/posts/2023/03/terraform-rds-module-with-dns-setup/)
