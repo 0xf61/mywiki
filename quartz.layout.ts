@@ -58,9 +58,16 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(explorerConfig),
   ],
   right: [
+    Component.Graph({
+      localGraph: {
+        depth: 2,
+      },
+    }),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Backlinks(),
     Component.RecentNotes({
       showTags: false,
-      limit: 5,
+      limit: 3,
       filter: (data: QuartzPluginData) => {
         return data.slug ? !data.slug.endsWith("index") : true
       },
@@ -70,9 +77,6 @@ export const defaultContentPageLayout: PageLayout = {
         return dateB - dateA
       },
     }),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
-    Component.Graph(),
   ],
 }
 
