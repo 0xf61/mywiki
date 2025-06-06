@@ -23,5 +23,3 @@ Common Problems:
 - Too many false alarms, which causes real dangers to be ignored.
 
 To make these risks less likely, companies should turn on logging for logins and important system events. They should also keep logs safe and protect them from being changed. It's important to set up real-time monitoring with alerts and check logs regularly to find anything unusual. Using special security tools (SIEM) and setting up plans to respond to problems quickly can really help to see what's happening and find threats.
-
-*Reference: OWASP Top 10 Security Risks*

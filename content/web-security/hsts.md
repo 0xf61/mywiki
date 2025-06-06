@@ -5,7 +5,6 @@ date: 2025-01-01
 tags:
   - owasp
   - hsts
-  - https
   - tls
   - ssl
   - cryptographic_failures
@@ -17,20 +16,16 @@ HSTS makes the internet safer by encouraging the use of secure connections. It a
 
 Here's a simple example of how the HSTS feature is used:
 
-```plaintext hljs
-
+```http
 Strict-Transport-Security: max-age=31536000
-
 ```
 
 In this example, the number 31536000 means one year. This tells the browser to remember to only use HTTPS for this website for the next 365 days. If someone tries to visit the site using HTTP, the browser will automatically change the connection to HTTPS.
 
 Some websites also use these extra settings:
 
-```plaintext hljs
-
+```http
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-
 ```
 
 - `includeSubDomains` means that the HSTS protection also applies to all subdomains of the website, making sure they also use secure connections.
@@ -48,5 +43,3 @@ Here's how to use HSTS to protect your website:
 3. **Start Slowly**
    - If you're not sure if all your subdomains are ready for HTTPS, start with a smaller `max-age` and don't use `includeSubDomains`.
    - Gradually increase the `max-age` and then add `includeSubDomains` once you're sure everything is secure.
-
-*Reference: OWASP Top 10 Security Risks*

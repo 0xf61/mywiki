@@ -39,5 +39,3 @@ Even if data is scrambled, using old or broken methods can make it easy for atta
 5. **Implement Strict Access Controls**
    - Only allow authorized people and programs to access computer files.
    - Only give people the minimum access they need to do their jobs.
-
-*Reference: OWASP Top 10 Security Risks*

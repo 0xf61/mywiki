@@ -7,50 +7,44 @@ tags:
   - code_injection
   - injection
   - remote_code_execution
-  - rce
 ---
 
-Code Injection is a big security problem where someone can put bad information into a program, and the program thinks it's real code and does it. This happens when the program takes what you type and uses it without checking if it's safe. If someone does this, they could control the program or even the whole computer.
+Code Injection is a significant security vulnerability that occurs when an attacker can send malicious code or input to an application, and the application executes it as part of its own code. This typically happens when user input is processed without proper validation or sanitization. If successful, an attacker could gain control over the application or the underlying system.
 
-It's not like SQL Injection (which is about databases) or Command Injection (which is about telling the computer what to do). Code Injection is when someone puts code in the same language the program uses, like Python or PHP. If the computer runs this bad code, the person can do things they're not supposed to, like see secret information.
+Unlike SQL Injection (which targets databases) or Command Injection (which targets operating system commands), Code Injection specifically targets the application's source code language, such as Python or PHP. If the application executes this injected code, attackers can perform unauthorized actions, including accessing sensitive data.
 
-One way this happens is with something called `eval()`:
+One common way this vulnerability occurs is through the misuse of functions that evaluate or execute code from strings, such as `eval()`:
 
-```
-
+```php
 <?php
     // Insecure PHP snippet
     $userInput = $_GET['data'];
     eval("\$variable = $userInput;");
 ?>
-
 ```
 
-If someone types this:
+If an attacker provides input like this:
 
 `?data=system('cat /etc/passwd');`
 
-the `eval()` thing will try to run that as code. If the computer isn't set up right, this could let someone do anything they want or see files they shouldn't.
+the `eval()` function will attempt to execute `system('cat /etc/passwd');` as PHP code. If the server configuration allows it, this could grant the attacker the ability to execute arbitrary commands and access sensitive files.
 
-Some languages can save things in a special way (like Java, PHP, Python). If a program saves something without checking it first, someone could put bad code in it. When the program opens it again, it might run that bad code. For example, in PHP:
+Certain programming languages (like Java, PHP, and Python) support serialization/deserialization, which is a way to convert complex data structures into a format that can be easily stored or transmitted. If an application deserializes untrusted user-provided data without proper validation, an attacker could inject malicious code. For example, in PHP:
 
-```
-
+```php
 <?php
     // Insecure example of unserializing user data
     $serializedData = $_POST['serialized'];
     $object = unserialize($serializedData);
     // Potentially triggers malicious constructors or methods
 ?>
-
 ```
 
-If the saved thing has bad stuff in it, it could make the program run code it shouldn't.
+If the serialized data contains malicious code, deserializing it can trigger the execution of that code within the application's context.
 
-Some programs use templates to make websites. If someone can type special things into the template, they could make the computer run code. For example:
+Web applications often use templating engines to generate dynamic HTML content. If user input is directly embedded into a template without proper escaping or sanitization, attackers can inject template syntax that executes code on the server. For example, a vulnerable Python Flask application using Jinja2:
 
-```
-
+```php
 # Vulnerable Python with Jinja2
 from flask import Flask, request, render_template_string
 
@@ -61,33 +55,30 @@ def index():
     user_input = request.args.get('data')
     template = f"Hello {user_input}!"
     return render_template_string(template)
-
 ```
 
-If the program doesn't check what someone types, they could type something like:
+If the application doesn't validate user input, an attacker could provide input that includes template expressions, such as:
 
-`/?data={{7*7}}` or `{% if ''.__class__.__mro__[1].__subclasses__()%}...`
+`/?data={{7*7}}` or `/?data={{\'\'.__class__.__mro__[1].__subclasses__()%}...`
 
-This could make the computer run any code through Python.
+This could cause the Jinja2 template engine to execute arbitrary Python code on the server.
 
-Here's how to stop this:
+Here's how to prevent Code Injection:
 
-1. **Don't Use Bad Code Helpers**
-- Don't use things like `eval()` or `exec()` that run code from what someone types.
-- If you have to use them, check the input very carefully and use special safety tools.
-1. **Save Things Safely**
-- Don't open saved things from people you don't trust.
-- If you have to, use safe ways to save things (like JSON) and make sure the data is what you expect.
-- Use helpers that check if the data is safe.
-1. **Use Safe Templates**
-- Use templates that automatically make sure what people type is safe.
-- Don't let people get to important parts of the computer through the template.
-1. **Check What People Type**
-- Always think that what people type is bad.
-- Check if it's the right kind of thing (like a number or a word) and get rid of anything that looks dangerous.
-- Make sure it's safe to use in the program.
-1. **Give the Program Only What It Needs**
-- Only let the program do the things it needs to do.
-- If someone puts bad code in, this will stop them from doing too much damage, like seeing files or using the computer.
-
-*Reference: OWASP Top 10 Security Risks*
+1.  **Avoid Evaluating User-Supplied Code**
+    - Avoid using functions like `eval()`, `exec()`, or `unserialize()` with user-provided input.
+    - If absolutely necessary, perform strict input validation and use secure sandboxing techniques.
+2.  **Handle Serialization Securely**
+    - Never deserialize data from untrusted sources.
+    - If deserialization is required, use secure formats (like JSON) and validate the data structure rigorously.
+    - Utilize libraries designed for secure deserialization.
+3.  **Use Secure Templating Engines**
+    - Employ templating engines that provide automatic context-aware escaping.
+    - Ensure templates are configured securely and do not expose dangerous functions or variables to user input.
+4.  **Implement Strict Input Validation and Sanitization**
+    - Treat all user input as potentially malicious.
+    - Validate input against expected formats and data types.
+    - Sanitize or encode input appropriately for the context where it will be used (e.g., HTML, JavaScript, template).
+5.  **Apply Principle of Least Privilege**
+    - Run applications with minimal necessary permissions.
+    - Limit the capabilities of the user or process running the application to reduce the potential impact of a successful injection.

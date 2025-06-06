@@ -16,10 +16,8 @@ If a server shows its software version in its messages (like "Apache/2.4.41 (Ubu
 
 Some web servers show their version in the HTTP response headers:
 
-```
-
+```http
 Server: Apache/2.4.41 (Ubuntu)
-
 ```
 
 If an attacker sees "Apache/2.4.41", they might look for known security problems with that version of Apache, which could help them attack the server.
@@ -39,5 +37,3 @@ Here are some ways to protect against server fingerprinting:
 1. **Make TLS/SSL Configuration Stronger**
 - Update or replace old security libraries and only use modern security methods.
 - Regularly check your TLS settings with security tools to see if any methods or protocol versions might reveal the server libraries being used.
-
-*Reference: OWASP Top 10 Security Risks*

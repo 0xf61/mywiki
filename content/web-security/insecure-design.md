@@ -23,5 +23,3 @@ Common Problems:
 - Not having security measures to limit how quickly an API can be used and prevent abuse
 
 To make these problems less likely, applications should use good security practices from the beginning, have strong login and permission systems, only give the necessary permissions, think about possible threats, and use secure coding rules. Regular security checks and tests should be done to find and fix design problems before the application is released.
-
-*Reference: OWASP Top 10 Security Risks*

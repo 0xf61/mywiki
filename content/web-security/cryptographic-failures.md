@@ -24,5 +24,3 @@ Common Mistakes:
 ECB Mode Usage, Broken Padding)
 
 To make these risks less likely, applications should use strong secret code rules (AES-256, SHA-256, TLS 1.2+), make sure HTTPS is used for all data sending, keep and change secret keys safely, and follow good rules for scrambling passwords (bcrypt, Argon2, PBKDF2). Regular security checks should also be done to make sure secret codes are safe.
-
-*Reference: OWASP Top 10 Security Risks*

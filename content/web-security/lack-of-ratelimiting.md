@@ -37,5 +37,3 @@ If people can post things like comments or messages, bad people can fill them wi
 1. **Use Web Application Firewalls (WAF)**
 - Use WAF rules to find and stop too many requests or repeated patterns aimed at important parts of the website.
 - Block or slow down bad IP addresses or suspicious traffic.
-
-*Reference: OWASP Top 10 Security Risks*

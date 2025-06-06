@@ -24,5 +24,3 @@ Common Vulnerabilities:
 - Failure to Monitor for Security Advisories or Dependency Vulnerabilities
 
 To reduce these risks, organizations should regularly update software components, use automated tools to scan for dependency issues (e.g., OWASP Dependency-Check, Snyk, Dependabot), verify the safety of third-party packages, and apply security patches as soon as they are released. Using Software Composition Analysis (SCA) and enforcing strict version control policies can further reduce the risk of vulnerable components.
-
-*Reference: OWASP Top 10 Security Risks*

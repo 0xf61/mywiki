@@ -19,16 +19,14 @@ An application includes user-submitted input directly into the response. For ins
 
 If the server-side code incorporates `someinput` into the HTML page without proper escaping, an attacker can craft a URL with a malicious script:
 
-`https://example.com/search?q=<script>alert('XSS')</script>`
+`https://example.com/search?q=<script>alert('Reflected-XSS')</script>`
 
 When a victim clicks this link, the browser executes the script in the page context.
 
 If a web form takes user data from a POST request and displays it on the page (e.g., an error message or confirmation) without sanitization, an attacker can submit a malicious payload:
 
-```
-
+```javascript
 <script>alert('Reflected XSS');</script>
-
 ```
 
 The response then reflects this script, causing the browser to run it whenever the victim views the result page.
@@ -45,5 +43,3 @@ The response then reflects this script, causing the browser to run it whenever t
 1. **Use Server-Side Security Libraries and Frameworks**
 - If your framework supports auto-escaping or context-sensitive encoding, enable it by default.
 - Avoid crafting raw HTML strings by concatenating user input; instead, use templating systems that are XSS-aware.
-
-*Reference: OWASP Top 10 Security Risks*

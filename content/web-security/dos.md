@@ -32,16 +32,19 @@ A Denial of Service (DoS) attack is a malicious attempt to disrupt the normal tr
 **Common Attack Vectors:**
 
 **Traffic Flooding:**
+
 ```bash
 # Example of volumetric attack using hping3
 hping3 -S --flood -V -p 80 target.com
 ```
 
 **Resource Exhaustion:**
+
 ```http
 GET /search?query=complex_regex_pattern HTTP/1.1
 Host: target.com
 ```
+
 Attackers target computationally expensive operations like:
 - Complex database queries with no LIMIT clauses
 - Image/video processing endpoints
@@ -49,6 +52,7 @@ Attackers target computationally expensive operations like:
 - Regular expression processing (ReDoS)
 
 **Connection Exhaustion (Slowloris):**
+
 ```http
 GET / HTTP/1.1
 Host: target.com
@@ -59,6 +63,7 @@ X-a: b
 The attack sends partial HTTP headers, keeping connections open indefinitely.
 
 **Application Logic Abuse:**
+
 ```http
 POST /expensive-operation HTTP/1.1
 Content-Type: application/json
@@ -69,6 +74,7 @@ Content-Type: application/json
 ## Comprehensive Defense Strategies
 
 ### 1. **Rate Limiting and Traffic Shaping**
+
 ```nginx
 # Nginx rate limiting configuration
 http {
@@ -87,6 +93,7 @@ http {
 ```
 
 ### 2. **Content Delivery Network (CDN) Protection**
+
 ```yaml
 # Cloudflare configuration example
 security_level: "high"
@@ -98,6 +105,7 @@ bot_fight_mode: "enabled"
 ```
 
 ### 3. **Resource Management and Circuit Breakers**
+
 ```python
 # Python circuit breaker pattern
 import time
@@ -130,6 +138,7 @@ def circuit_breaker(failure_threshold=5, recovery_timeout=60):
 ```
 
 ### 4. **Web Application Firewall (WAF) Rules**
+
 ```yaml
 # ModSecurity rules for DoS protection
 SecRule REQUEST_HEADERS:User-Agent "@pmFromFile suspicious-agents.txt" \
@@ -143,6 +152,7 @@ SecRule REQUEST_URI "@detectSQLi" \
 ```
 
 ### 5. **Infrastructure Scaling and Load Balancing**
+
 ```yaml
 # Kubernetes HPA configuration
 apiVersion: autoscaling/v2
@@ -172,6 +182,7 @@ spec:
 ```
 
 ### 6. **Advanced Detection and Mitigation**
+
 ```python
 # Anomaly detection for traffic patterns
 def detect_dos_attack(request_logs):
@@ -190,5 +201,3 @@ def detect_dos_attack(request_logs):
             block_ip(ip)
             alert_security_team(f"Potential DoS from {ip}")
 ```
-
-*Reference: OWASP Top 10 Security Risks*

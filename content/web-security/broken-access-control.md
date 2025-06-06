@@ -17,17 +17,21 @@ Broken Access Control is a critical security vulnerability that occurs when appl
 ## Common Vulnerability Patterns:
 
 ### 1. **Insecure Direct Object References (IDOR)**
+
 ```http
 GET /api/users/1234/profile HTTP/1.1
 Authorization: Bearer user_token_5678
 ```
+
 Attacker changes user ID to access other users' data:
+
 ```http
 GET /api/users/9999/profile HTTP/1.1
 Authorization: Bearer user_token_5678
 ```
 
 ### 2. **Vertical Privilege Escalation**
+
 ```http
 POST /admin/users HTTP/1.1
 Content-Type: application/json
@@ -37,12 +41,14 @@ Authorization: Bearer regular_user_token
 ```
 
 ### 3. **Horizontal Privilege Escalation**
+
 ```http
 GET /dashboard?user_id=victim_user_id HTTP/1.1
 Cookie: session=attacker_session_id
 ```
 
 ### 4. **Forced Browsing (Directory Traversal)**
+
 ```http
 GET /admin/panel HTTP/1.1
 GET /backup/database.sql HTTP/1.1
@@ -50,6 +56,7 @@ GET /../../../etc/passwd HTTP/1.1
 ```
 
 ### 5. **Method-based Bypass**
+
 ```http
 # If POST is protected but PUT isn't
 PUT /api/users/1234 HTTP/1.1
@@ -59,6 +66,7 @@ Content-Type: application/json
 ```
 
 ### 6. **Parameter Tampering**
+
 ```html
 <!-- Hidden form fields manipulation -->
 <input type="hidden" name="user_role" value="admin">
@@ -66,6 +74,7 @@ Content-Type: application/json
 ```
 
 ### 7. **JSON/XML Parameter Injection**
+
 ```json
 {
   "user_id": 1234,
@@ -80,6 +89,7 @@ Content-Type: application/json
 ### 1. **Implement Robust Authorization Frameworks**
 
 **Role-Based Access Control (RBAC) Implementation:**
+
 ```python
 from enum import Enum
 from typing import List, Dict, Any
@@ -140,6 +150,7 @@ def get_user_profile(requesting_user_id: int, target_user_id: int, user_role: Ro
 ### 2. **Server-Side Authorization Enforcement**
 
 **Middleware-based Authorization:**
+
 ```python
 from functools import wraps
 from flask import request, jsonify, g
@@ -193,6 +204,7 @@ def get_user_profile(user_id):
 ### 3. **Secure Object Reference Implementation**
 
 **Indirect Object References:**
+
 ```python
 import uuid
 from typing import Dict, Optional

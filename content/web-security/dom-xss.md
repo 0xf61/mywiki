@@ -16,12 +16,10 @@ Because the bad code never gets to the server (or the server doesn't see it as d
 
 Imagine some code that takes a piece of information from the website address and shows it on the page:
 
-```
-
+```javascript
 // Example of unsafe code
 let userParam = new URLSearchParams(window.location.search).get('text');
 document.getElementById('output').innerHTML = userParam;
-
 ```
 
 If a bad person makes a website address like this:
@@ -32,12 +30,10 @@ the code will put that message directly onto the page, which could be a problem 
 
 On some websites, the website saves information in the part of the address that starts with a '#'. If the website's code puts this information directly onto the page, a bad person can put bad code in that part of the address:
 
-```
-
+```javascript
 // Reading window.location.hash and directly showing it
 let hashContent = window.location.hash.substring(1); // e.g. '#Saying hello!'
 document.getElementById('hashOutput').innerHTML = decodeURIComponent(hashContent);
-
 ```
 
 If someone visits a link with a bad message (like `https://example.com/#Saying hello!`), the bad code could run.
@@ -54,5 +50,3 @@ If someone visits a link with a bad message (like `https://example.com/#Saying h
 1. **Website Safety Rules (CSP)**
 - Setting up clear website safety rules can lower the risk of bad code getting in, even if there are some DOM-based XSS problems.
 - For example, don't allow code to be written directly on the page, and only allow code from trusted sources to limit the damage from bad code.
-
-*Reference: OWASP Top 10 Security Risks*

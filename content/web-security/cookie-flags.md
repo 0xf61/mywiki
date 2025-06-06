@@ -17,7 +17,7 @@ Cookies are often used to remember who you are when you log in to a website or t
 
 If the `HttpOnly` label isn't set, it's like leaving the cookie jar open. Someone could use a trick to grab the cookie using a special code:
 
-```
+```javascript
 <script>
   alert(document.cookie);
 </script>
@@ -29,7 +29,7 @@ If a cookie doesn't have the `Secure` label, it's like sending it through the ma
 
 Here's an example of a cookie without the `Secure` label:
 
-```
+```html
 Set-Cookie: sessionid=abcd1234; Path=/; HttpOnly;
 ```
 
@@ -39,7 +39,7 @@ The `SameSite` label helps prevent tricks where someone makes you do something w
 
 Here's an example of a cookie missing the `SameSite` label:
 
-```
+```html
 Set-Cookie: sessionid=abcd1234; Path=/; Secure; HttpOnly;
 ```
 
@@ -52,7 +52,7 @@ Here's how to set the labels correctly:
 - This makes sure that only the website can use the cookie, not sneaky code.
 - Example:
 
-```
+```http
 Set-Cookie: sessionid=abcd1234; Path=/; HttpOnly;
 ```
 
@@ -61,7 +61,7 @@ Set-Cookie: sessionid=abcd1234; Path=/; HttpOnly;
 - This makes sure the cookie is only sent through a safe, locked connection.
 - Example:
 
-```
+```http
 Set-Cookie: sessionid=abcd1234; Path=/; Secure; HttpOnly;
 ```
 
@@ -70,7 +70,7 @@ Set-Cookie: sessionid=abcd1234; Path=/; Secure; HttpOnly;
 - Use `SameSite=Lax` or `SameSite=Strict` to prevent others from using your cookie on different websites without your permission.
 - Example:
 
-```
+```http
 Set-Cookie: sessionid=abcd1234; Path=/; Secure; HttpOnly; SameSite=Lax;
 ```
 
@@ -79,8 +79,6 @@ Set-Cookie: sessionid=abcd1234; Path=/; Secure; HttpOnly; SameSite=Lax;
 - Limit cookies to certain parts of a website to make sure they can't be used where they shouldn't be.
 - Example:
 
-```
+```http
 Set-Cookie: sessionid=abcd1234; Path=/account; Secure; HttpOnly; SameSite=Strict;
 ```
-
-*Reference: OWASP Top 10 Security Risks*

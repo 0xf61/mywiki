@@ -16,14 +16,12 @@ The main problem is that user input is used in functions that handle files (like
 
 LFI can become more serious if attackers can include and use files that contain harmful code or user-submitted content. In some cases, LFI can lead to Remote Code Execution (RCE), which means attackers can run code on the server. Even if it's just reading files, it can expose important information, help attackers plan more attacks, and compromise privacy.
 
-```php hljs
-
+```php
 // Vulnerable code snippet
 <?php
     $page = $_GET['page'];  // For example, ?page=index
     include($page);         // No input validation
 ?>
-
 ```
 
 An attacker could do this by entering:
@@ -59,5 +57,3 @@ These examples show how an attacker can use unchecked file inclusion to read sys
 4. **Filtering and Encoding**
    - Remove or encode special characters from user input (like `../`) that allow path traversal.
    - In some cases, using strong filtering can reduce the risk of LFI attacks, but whitelisting is usually more secure than blacklisting.
-
-*Reference: OWASP Top 10 Security Risks*

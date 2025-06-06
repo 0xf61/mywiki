@@ -28,11 +28,10 @@ If a program only uses passwords for security and doesn't ask for something extr
 
 If a system doesn't limit how many times you can try to log in, bad guys can keep trying until they guess the right password. For example:
 
-```
-
+```http
 POST /login
-username=admin&password=admin123
 
+username=admin&password=admin123
 ```
 
 If there's no limit, a bad guy can try thousands of passwords every second until they find the right one.
@@ -56,5 +55,3 @@ If you can use old passwords again, bad guys can use passwords that were stolen 
 1. **Use Good Password Hashing Methods**
 - Store passwords safely using strong methods like bcrypt, Argon2, or PBKDF2 with special salts.
 - Don't use old or unsafe methods like MD5 or SHA-1.
-
-*Reference: OWASP Top 10 Security Risks*

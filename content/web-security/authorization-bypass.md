@@ -4,10 +4,8 @@ draft: false
 date: 2025-01-01
 tags:
   - owasp
-  # - authorization
   - bypass
   - access_control
-  - broken_access_control
 ---
 
 Authorization Bypass is a security problem where a program doesn't check permissions properly. This lets bad people get to things or do things they shouldn't be able to. It usually happens because the rules for who can do what are weak or not complete. Even if someone doesn't have the right permissions, they can trick the system (by guessing links, changing settings, or messing with how the system remembers them) to get into places or do things they're not allowed to. Sometimes, programmers think it's enough to check things on the user's side of the computer, but they don't protect the important parts on the server.
@@ -22,20 +20,16 @@ If the server doesn't check if the person asking to see the `/admin/dashboard` p
 
 Or, imagine a request includes a setting that says what kind of user someone is:
 
-```hljs
-
+```http
  POST /updateUser
  Role: user
-
 ```
 
 If the program lets someone change that setting to:
 
-```hljs
-
+```http
  POST /updateUser
  Role: admin
-
 ```
 
 without checking if they really have permission to be an administrator, they could become an administrator and do bad things.
@@ -52,5 +46,3 @@ Here's how to prevent Authorization Bypass:
 - Use a central system for checking permissions (like middleware or filters) so that the rules are the same everywhere and can't be skipped in certain parts of the program.
 - Make sure that the codes that remember users are connected to their permissions every time they ask to do something.
 - Protect these codes from being stolen or used again by using secure cookies, HTTP-only flags, and encryption if needed.
-
-*Reference: OWASP Top 10 Security Risks*

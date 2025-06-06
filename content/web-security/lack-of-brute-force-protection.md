@@ -19,11 +19,10 @@ This problem is worse if passwords are weak or stolen passwords are used again, 
 
 An attacker can send many login requests without being stopped:
 
-```
-
+```http
 POST /login
-username=admin&password=guess123
 
+username=admin&password=guess123
 ```
 
 Tools can try many common passwords without being noticed.
@@ -55,5 +54,3 @@ Attackers use lists of stolen passwords against the login page. If there's no ch
 7. **Check Login Events**
 - Keep track of all login tries, failures, and lockouts
 - Look at logs for brute-force patterns
-
-*Reference: OWASP Top 10 Security Risks*

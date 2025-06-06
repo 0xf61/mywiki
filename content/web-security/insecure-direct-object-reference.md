@@ -7,7 +7,6 @@ tags:
   - idor
   - access_control
   - authorization
-  - broken_access_control
 ---
 
 Insecure Direct Object Reference (IDOR) is a type of problem that happens when a program uses information given by a user to get to things inside it, like files or records in a computer's memory. This can be a problem if the program doesn't check carefully to make sure the user is allowed to see or change those things. If it doesn't, someone could trick the program into showing them things they shouldn't see, or letting them change things they shouldn't change.
@@ -50,5 +49,3 @@ Here are some ways to prevent IDOR:
 4. **Use Safe Programming Practices**
    - Use tools and programs that have built-in ways to control who is allowed to see or change things.
    - Only give people the minimum permissions they need to do their jobs.
-
-*Reference: OWASP Top 10 Security Risks*

@@ -50,5 +50,3 @@ Common certificate setup problems include:
 
 - Use SSL/TLS scanning tools (like openssl, nmap, or other special scanners) to check protocol setups and encryption method strength.
 - Regularly update server software to use the newest safety updates and recommended setups.
-
-*Reference: OWASP Top 10 Security Risks*

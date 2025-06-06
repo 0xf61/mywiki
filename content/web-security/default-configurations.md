@@ -32,5 +32,3 @@ In some web programs, sample pages or tools are enabled by default for demonstra
 1. **Follow Vendor and Community Best Practices**
 - Read official guides or trusted community advice on how to secure the specific software or service.
 - Stay informed about known standard settings or weaknesses and use recommended fixes or updates.
-
-*Reference: OWASP Top 10 Security Risks*

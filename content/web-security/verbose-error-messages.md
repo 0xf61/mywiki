@@ -18,11 +18,9 @@ For example, a program might show a full stack trace (a list of the steps the pr
 
 If a SQL query fails (SQL is a language used to talk to databases), the program might show a detailed message like:
 
-```
-
+```sql
 SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in
 your SQL syntax near 'FROM users WHERE id= ' at line 1
-
 ```
 
 This shows the attacker how the query is structured, including table names and SQL commands. This can help them figure out how to inject malicious code into the query.
@@ -40,5 +38,3 @@ Here are some ways to prevent verbose error messages from causing problems:
 1. **Use Different Configurations for Development and Production**
 - When using frameworks like Django, Rails, or Express, make sure that debug settings are turned off when the program is being used by real people.
 - Production mode usually hides detailed error messages and stack traces by default.
-
-*Reference: OWASP Top 10 Security Risks*

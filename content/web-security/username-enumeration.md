@@ -16,36 +16,30 @@ Applications often show they have this problem through login forms, password res
 
 A login form that has this problem might give different messages depending on whether the username is real:
 
-```
-
+```http
 POST /login
-username=admin&password=wrongpassword
 
+username=admin&password=wrongpassword
 ```
 
 **Response:**
 
-```
-
+```json
 "Invalid password."
-
 ```
 
 (This means "admin" is a real username)
 
-```
-
+```http
 POST /login
-username=notrealuser&password=wrongpassword
 
+username=notrealuser&password=wrongpassword
 ```
 
 **Response:**
 
-```
-
+```json
 "User does not exist."
-
 ```
 
 (This means "notrealuser" is not a real username)
@@ -54,11 +48,10 @@ People can use this to make a list of real usernames.
 
 If the password reset feature gives away username information, someone can try email addresses or usernames:
 
-```
-
+```http
 POST /reset-password
-email=user@example.com
 
+email=user@example.com
 ```
 
 **Responses:**
@@ -85,5 +78,3 @@ People can measure these times and guess which usernames are real.
 - Use Web Application Firewalls (WAF) to find and stop people from trying to guess usernames automatically.
 1. **Use CAPTCHA on Important Pages**
 - Put CAPTCHAs on login, registration, and password reset pages to stop people from guessing usernames automatically.
-
-*Reference: OWASP Top 10 Security Risks*

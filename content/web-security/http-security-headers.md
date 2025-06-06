@@ -18,7 +18,7 @@ If security headers aren't set up right, hackers can change what you see, put ba
 
 The HTTP Strict Transport Security (HSTS) header makes sure browsers only use HTTPS to connect to a website. This stops hackers from making you use an older, less safe version of the site:
 
-```
+```http
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 ```
 
@@ -28,7 +28,7 @@ If a website lets other sites put it inside a box (`<iframe>`), hackers can tric
 
 To stop this, use this header:
 
-```
+```http
 X-Frame-Options: DENY
 ```
 
@@ -38,7 +38,7 @@ Sometimes, browsers try to guess what type of file it is, even if the website sa
 
 To stop this, use this header:
 
-```
+```http
 X-Content-Type-Options: nosniff
 ```
 
@@ -48,7 +48,7 @@ If a website doesn't have a Content Security Policy (CSP), hackers can put bad s
 
 A good CSP header looks like this:
 
-```
+```http
 Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-random123'; object-src 'none'
 ```
 
@@ -59,7 +59,7 @@ Without it, bad scripts can run in your browser when you visit the site.
    - Stops hackers from making you use an older version of the site by making sure everything is over HTTPS.
    - Recommended setting:
 
-```
+```http
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 ```
 
@@ -68,7 +68,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
    - Stops other sites from putting the website in a box to trick you.
    - Recommended setting:
 
-```
+```http
 X-Frame-Options: DENY
 ```
 
@@ -77,7 +77,7 @@ X-Frame-Options: DENY
    - Makes sure the browser uses the right type of file and doesn't run bad scripts.
    - Recommended setting:
 
-```
+```http
 X-Content-Type-Options: nosniff
 ```
 
@@ -86,7 +86,7 @@ X-Content-Type-Options: nosniff
    - Limits where scripts, styles, and other things can come from.
    - Example policy:
 
-```
+```http
 Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-random123'; object-src 'none'
 ```
 
@@ -95,8 +95,6 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-random123'
    - Controls how much information is sent when you go to another website.
    - Recommended setting:
 
-```
+```http
 Referrer-Policy: strict-origin-when-cross-origin
 ```
-
-*Reference: OWASP Top 10 Security Risks*

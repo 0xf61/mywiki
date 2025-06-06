@@ -17,11 +17,10 @@ If monitoring isn't good enough, alerts for things like brute-force attacks, get
 
 An application that doesn't log when someone tries to log in, whether they succeed or fail, allows attackers to keep trying different passwords without being caught.
 
-```
-
+```http
 POST /login
-username=admin&password=wrongpassword
 
+username=admin&password=wrongpassword
 ```
 
 No log entry is created, so it's impossible to detect repeated failed login attempts.
@@ -32,11 +31,10 @@ Example: An admin creates a new user with superuser permissions, but this event 
 
 APIs that handle money transactions, password changes, or login tokens should log what happens. Without this, an attacker can move money, change passwords, or change requests without being detected.
 
-```
-
+```http
 POST /update-balance
-{ "user": "attacker", "balance": "9999999" }
 
+{ "user": "attacker", "balance": "9999999" }
 ```
 
 If the API doesn't log this request, systems that detect fraud can't flag it.
@@ -58,24 +56,19 @@ Even if logs are created, not actively checking them allows attacks to go unnoti
 
 - Example of secure logging:
 
-\`\`\`plaintext hljs
-
+```text
  [INFO] User login attempt: user=admin, IP=192.168.1.10, status=FAILED
-
- \`\`\`
+```
 
 - Example of insecure logging:
 
-\`\`\`plaintext hljs
-
+```text
  [DEBUG] User login: username=admin, password=admin123
+```
 
- \`\`\`
 1. **Regularly Review and Audit Logs**
 - Check logs regularly to find unusual activity.
 - Use machine learning to find patterns that indicate a problem.
 1. **Ensure Log Retention Policies**
 - Keep logs for 6-12 months to help with investigations.
 - Use log rotation and archiving to manage storage space.
-
-*Reference: OWASP Top 10 Security Risks*

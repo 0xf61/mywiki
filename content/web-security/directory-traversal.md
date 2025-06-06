@@ -49,5 +49,3 @@ Directory Traversal problems can sometimes be used with other attacks:
 4. **Use Built-In Security Features**
    - If your programming language or framework has file handling functions with path normalization or sandboxing, use them.
    - For example, in Java, `java.nio.file.Files` and `java.nio.file.Paths` can help normalize paths and lower the risk of directory traversal.
-
-*Reference: OWASP Top 10 Security Risks*

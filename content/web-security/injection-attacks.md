@@ -25,5 +25,3 @@ Common Problems:
 - Email Header Injection – Changing email headers to send spam or trick people
 
 To make these problems less likely, applications should use special queries with parameters, check and clean user input, escape special characters, use content security policies (CSP), and give backend services only the necessary permissions. Regular security checks, including automated scans and manual testing, are important to find and stop injection problems.
-
-*Reference: OWASP Top 10 Security Risks*

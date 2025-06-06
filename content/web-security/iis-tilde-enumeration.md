@@ -17,7 +17,7 @@ This problem comes from old DOS-style naming in Windows. If short filename creat
 
 If the real folder on the server is `SecretAdmin`, the short name might be `SECRE~1`. An attacker might try URLs like:
 
-```
+```http
 GET /SECRE~1/ HTTP/1.1
 Host: example.com
 ```
@@ -27,7 +27,7 @@ Host: example.com
 
 Similarly, if a file is named `ImportantConfig.txt` in the `Config` directory, the attacker might test requests for `IMPOR~1.TXT` in that directory:
 
-```
+```http
 GET /Config/IMPOR~1.TXT HTTP/1.1
 Host: example.com
 ```
@@ -40,7 +40,7 @@ Different server responses or error messages can show that the file is there, ev
 - (Remember that changing this setting might affect older applications.)
 - For example, on some Windows systems, you can change:
 
-```
+```regedit
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
 NtfsDisable8dot3NameCreation = 1
 ```
@@ -51,5 +51,3 @@ NtfsDisable8dot3NameCreation = 1
 1. **Restrict Folder and File Access**
 - Use Access Control Lists (ACLs) to protect important directories and files, preventing unauthorized access even if short filename enumeration shows they exist.
 - Set up strong authorization checks in IIS to make sure only the right users can access important resources.
-
-*Reference: OWASP Top 10 Security Risks*

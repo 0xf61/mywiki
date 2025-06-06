@@ -19,7 +19,7 @@ Showing stack traces often happens because of mistakes in how the program handle
 
 Imagine a program made with Java has a problem called "NullPointerException." This problem isn't handled correctly, so the program shows a default error page that looks like this:
 
-```
+```java
 java.lang.NullPointerException
     at com.example.app.UserService.getUserById(UserService.java:45)
     at com.example.app.UserController.handleRequest(UserController.java:67)
@@ -30,7 +30,7 @@ This shows the names of the program's parts, like "UserService" and "UserControl
 
 Or, imagine a program made with Flask shows a detailed record of a problem, including information about the environment it's running in:
 
-```
+```python
 Traceback (most recent call last):
   File "/path/to/flask/app.py", line 200, in create_user
     user = User(name=request.form['username'])
@@ -46,13 +46,13 @@ Here are some ways to prevent showing too much information:
 1. **Use Proper Error Handling**
 
 - Turn off special debugging features when the program is running for real. Most frameworks have settings to hide stack traces from users when the program is live.
+
 1. **Create Custom Error Pages**
 
 - Catch all problems in the program and handle them.
 - Show only simple error messages to users, like "An error occurred" or "Something went wrong."
+
 1. **Keep Logs Private**
 
 - Store detailed records of problems in log files or special logging systems.
 - Make sure only authorized people can access these logs.
-
-*Reference: OWASP Top 10 Security Risks*

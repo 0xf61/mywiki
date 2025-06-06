@@ -8,7 +8,6 @@ tags:
   - bypass
   - authentication
   - automated_attacks
-  - bot_protection
 ---
 
 A CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) is a test designed to tell apart real people from computer programs. Many CAPTCHAs can be tricked because of problems in how they are made or used. Attackers take advantage of these problems to automatically fill out forms, make fake accounts, or do many things at once without being stopped by the CAPTCHA.
@@ -26,7 +25,7 @@ If the CAPTCHA images or audio are easy to understand, computer programs can sol
 
 - **Low Distortion**: Simple picture CAPTCHAs with clear letters and numbers are easy for computer programs to read.
 - **Predictable Background**: If the background is plain, it's easier to find the letters and numbers.
-- **Simple Audio Challenges**: Computer programs can easily understand simple spoken words or numbers.
+- **Simple Audio Challenges**: Computer programs can easily understand simple spoken words or numbers. This ease of understanding by machines is partly why data from solved CAPTCHAs has historically been valuable for training image-to-text recognition (OCR) systems.
 
 Attackers often pay real people to solve CAPTCHAs for them:
 
@@ -48,5 +47,3 @@ Attackers often pay real people to solve CAPTCHAs for them:
 1. **Multi-Factor or Additional Security Layers**
 - Use CAPTCHAs with other security measures, like email or phone verification.
 - Use multi-factor authentication for important actions, so you don't have to rely on CAPTCHAs alone.
-
-*Reference: OWASP Top 10 Security Risks*

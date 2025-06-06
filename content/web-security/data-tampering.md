@@ -115,5 +115,3 @@ If important data is only checked on the website itself, attackers can bypass th
 - **Encryption at Rest**: Encrypt sensitive data in databases and storage systems
 - **Key Management**: Implement proper cryptographic key lifecycle management
 - **Salt and Pepper**: Use unique salts and global peppers for password hashing
-
-*Reference: OWASP Top 10 Security Risks*

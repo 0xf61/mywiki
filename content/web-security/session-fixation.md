@@ -18,39 +18,33 @@ By using session fixation, attackers can pretend to be you and get into your acc
 
 1. **Attacker makes a session ID:**
 
-```
-
+```http
 GET /login
 Set-Cookie: JSESSIONID=123456
-
 ```
 
 2. **Attacker tricks you into using this session ID**
 
-   - By putting the session ID in a fake link:
+- By putting the session ID in a fake link:
 
-```
-
+```url
 https://example.com/login;JSESSIONID=123456
-
 ```
 
-   - By putting a session ID in a cookie using a trick called Cross-Site Scripting (XSS).
+- By putting a session ID in a cookie using a trick called Cross-Site Scripting (XSS).
 3. **You log in using the attacker's session ID**
 
-   - The session ID stays the same after you log in.
+- The session ID stays the same after you log in.
 4. **Attacker can now get into your account**
 
-   - Because the session ID is the same before and after you log in, the attacker can use `JSESSIONID=123456` to get into your account.
+- Because the session ID is the same before and after you log in, the attacker can use `JSESSIONID=123456` to get into your account.
 
 Some websites don't stop session tokens properly when you log out. If this happens:
 
 1. **You log in and get a session token:**
 
-```
-
+```http
 Set-Cookie: sessionid=abcd1234; HttpOnly; Secure
-
 ```
 
 2. **Attacker steals the session ID (like by XSS, session fixation, or watching the network).**
@@ -59,69 +53,56 @@ Set-Cookie: sessionid=abcd1234; HttpOnly; Secure
 
 4. **Attacker uses the same session token again after you log out:**
 
-```
-
+```http
 GET /dashboard
 Cookie: sessionid=abcd1234
-
 ```
 
-   - If the server doesn't stop the session properly, the attacker can still get in.
+- If the server doesn't stop the session properly, the attacker can still get in.
 
 5. **Make a New Session ID After Login**
 
-   - Give a new session ID right after someone logs in to stop session fixation.
+- Give a new session ID right after someone logs in to stop session fixation.
 
-   - In PHP:
+- In PHP:
 
 ```php
-
 session_regenerate_id(true);
-
 ```
 
-   - In Java (Spring Security):
+- In Java (Spring Security):
 
 ```java
-
 http.sessionManagement().sessionFixation().newSession();
-
 ```
 
 6. **Stop the Session Properly on Logout**
 
-   - Make sure the session is completely stopped when someone logs out:
+- Make sure the session is completely stopped when someone logs out:
 
 ```php
-
 session_destroy();
-
 ```
 
-   - Remove session cookies in HTTP headers:
+- Remove session cookies in HTTP headers:
 
 ```http
-
 Set-Cookie: sessionid=deleted; expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; HttpOnly
-
 ```
 
 7. **Set Secure Cookie Attributes**
 
-   - Use HttpOnly, Secure, and SameSite to protect session cookies:
+- Use HttpOnly, Secure, and SameSite to protect session cookies:
 
 ```http
-
 Set-Cookie: JSESSIONID=abcd1234; HttpOnly; Secure; SameSite=Strict
-
 ```
 
 8. **Make Sessions Timeout and Expire**
 
-   - Automatically stop sessions that are not being used to prevent hijacking.
-   - Stop sessions after a set time (like 30 minutes of not being used).
+- Automatically stop sessions that are not being used to prevent hijacking.
+- Stop sessions after a set time (like 30 minutes of not being used).
+
 9. **Stop Sharing Sessions on Different Devices**
 
-   - Use device fingerprinting or IP binding to only let the session be used on the device it started on.
-
-*Reference: OWASP Top 10 Security Risks*
+- Use device fingerprinting or IP binding to only let the session be used on the device it started on.

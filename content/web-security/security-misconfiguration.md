@@ -22,5 +22,3 @@ Common Problems:
 - Letting Anyone Get into Admin Areas or APIs
 
 To make these risks less likely, apps should turn off features they don't need, make sure only authorized people can get in, update software regularly, set security headers correctly, and check for security problems to find mistakes in the setup. Using automated tools to manage settings and using security guidelines can also help reduce the chances of problems.
-
-*Reference: OWASP Top 10 Security Risks*
