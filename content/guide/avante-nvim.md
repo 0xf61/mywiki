@@ -1,6 +1,7 @@
 ---
 title: Using copilot sonnet-3.7 with Avante.nvim via Lazyvim
 draft: false
+date: 2025-05-11
 tags:
   - copilot
   - sonnet
