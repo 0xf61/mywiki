@@ -32,9 +32,11 @@ https://example.com/login;JSESSIONID=123456
 ```
 
 - By putting a session ID in a cookie using a trick called Cross-Site Scripting (XSS).
+
 3. **You log in using the attacker's session ID**
 
 - The session ID stays the same after you log in.
+
 4. **Attacker can now get into your account**
 
 - Because the session ID is the same before and after you log in, the attacker can use `JSESSIONID=123456` to get into your account.

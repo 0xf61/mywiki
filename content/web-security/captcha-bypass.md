@@ -33,17 +33,26 @@ Attackers often pay real people to solve CAPTCHAs for them:
 - **Phishing or Proxy Tactics**: Attackers trick people into solving CAPTCHAs for them, like on a fake website.
 
 1. **Server-Side Enforcement and Validation**
+
 - Only check CAPTCHA codes on the server and mark them as used after one use.
 - Don't only rely on the user's computer to check CAPTCHA results or control when forms can be submitted.
+
 1. **Use Secure and Evolving CAPTCHA Mechanisms**
+
 - Use modern CAPTCHAs that have complicated pictures, different types of challenges, or change how hard they are.
 - Update CAPTCHA programs regularly to stay ahead of attackers.
+
 1. **Rate Limiting and Behavior Analysis**
+
 - Limit how many times someone can try to solve a CAPTCHA to reduce the impact of attackers.
 - Watch how users behave, like how they move the mouse, to find and block computer programs.
+
 1. **Short Expiration and Non-Predictable Tokens**
+
 - Create CAPTCHA codes that are hard to guess and use strong computer security methods.
 - Make the codes expire quickly to prevent them from being reused.
+
 1. **Multi-Factor or Additional Security Layers**
+
 - Use CAPTCHAs with other security measures, like email or phone verification.
 - Use multi-factor authentication for important actions, so you don't have to rely on CAPTCHAs alone.

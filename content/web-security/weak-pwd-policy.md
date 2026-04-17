@@ -39,19 +39,28 @@ If there's no limit, a bad guy can try thousands of passwords every second until
 If you can use old passwords again, bad guys can use passwords that were stolen before to try to get into your account. If you never have to change your password, a bad guy has more time to try to break in.
 
 1. **Make Strong Passwords a Must**
+
 - Passwords should be at least 10-16 letters and numbers long.
 - You have to use big letters, small letters, numbers, and special symbols.
 - Don't let people use common passwords by checking them against lists of stolen passwords.
+
 1. **Use Multi-Factor Authentication (MFA)**
+
 - Use MFA for important accounts and when doing important things.
 - Use codes that change regularly, fingerprint scans, or special security keys.
+
 1. **Limit Login Attempts and Lock Accounts**
+
 - If someone tries to log in wrong 5-10 times, lock the account for a while.
 - Make people wait longer each time they try to log in wrong.
 - Use puzzles on login pages to stop computers from guessing passwords.
+
 1. **Make Passwords Expire and Change Regularly**
+
 - Make people change their passwords every few months for important accounts.
 - Don't let people use the same passwords they used before.
+
 1. **Use Good Password Hashing Methods**
+
 - Store passwords safely using strong methods like bcrypt, Argon2, or PBKDF2 with special salts.
 - Don't use old or unsafe methods like MD5 or SHA-1.

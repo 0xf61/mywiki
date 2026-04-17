@@ -36,21 +36,34 @@ Bots can fill out login forms automatically without problems, helping attacks ha
 Attackers use lists of stolen passwords against the login page. If there's no check, they can easily find working username/password pairs.
 
 1. **Set Limits**
+
 - Limit login tries per IP address or account to 3–5 per minute
 - Make delays longer after each wrong try
+
 2. **Lock Accounts**
+
 - Lock the account for a while after too many wrong tries (like 5–10)
 - Tell users when their account is locked
+
 3. **Use CAPTCHA**
+
 - Add CAPTCHA to login pages after many wrong tries or strange activity
+
 4. **Use Multi-Factor Authentication (MFA)**
+
 - Use MFA to lower the risk of account takeover even if passwords are stolen
+
 5. **Watch for Strange Logins**
+
 - Find login tries from unusual IP addresses or lots of traffic
 - Use IP reputation to block bad sources
+
 6. **Find Stolen Passwords**
+
 - Find login tries using known stolen passwords and block them
 - Use services to check for reused passwords
+
 7. **Check Login Events**
+
 - Keep track of all login tries, failures, and lockouts
 - Look at logs for brute-force patterns

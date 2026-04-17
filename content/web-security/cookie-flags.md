@@ -18,9 +18,7 @@ Cookies are often used to remember who you are when you log in to a website or t
 If the `HttpOnly` label isn't set, it's like leaving the cookie jar open. Someone could use a trick to grab the cookie using a special code:
 
 ```javascript
-<script>
-  alert(document.cookie);
-</script>
+<script>alert(document.cookie);</script>
 ```
 
 If someone steals your cookie, they could pretend to be you on the website.

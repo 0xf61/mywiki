@@ -20,6 +20,7 @@ This guide covers common OpenVPN connection problems and their solutions across 
 If OpenVPN Connect fails to establish a connection on macOS, it might be due to location services permissions:
 
 **Steps to fix:**
+
 1. Click the Apple icon in the top-left corner of your screen
 2. Go to "System Preferences" → "Security & Privacy"
 3. Click the "Privacy" tab
@@ -50,17 +51,20 @@ ps auxww | grep ovpnagent
 ```
 
 After running these commands:
+
 1. Restart your Mac
 2. Try connecting to the VPN again
 
 ### 3. General Connection Troubleshooting
 
 **Check your configuration:**
+
 - Verify server address and port are correct
 - Ensure authentication credentials are valid
 - Check if the VPN server is accessible from your network
 
 **Network diagnostics:**
+
 ```bash
 # Test connectivity to VPN server
 ping your-vpn-server.com
@@ -70,6 +74,7 @@ telnet your-vpn-server.com 1194
 ```
 
 **Log analysis:**
+
 - Check OpenVPN logs for specific error messages
 - Look for authentication failures, certificate issues, or network timeouts
 
@@ -90,6 +95,7 @@ telnet your-vpn-server.com 1194
 ## Additional Resources
 
 For platform-specific issues, consult:
+
 - OpenVPN official documentation
 - Your VPN provider's support resources
 - Network administrator if using corporate VPN

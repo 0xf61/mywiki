@@ -70,4 +70,4 @@ As you can see, using poetry makes the image `132 MB` larger. If you deploy 12 t
 
 Even though storage is cheap these days, reducing image sizes can still be helpful! 😎
 
-[Reference](https://karnwong.me/posts/2024/04/slim-down-python-docker-image-size-with-poetry-and-pip/ )
+[Reference](https://karnwong.me/posts/2024/04/slim-down-python-docker-image-size-with-poetry-and-pip/)

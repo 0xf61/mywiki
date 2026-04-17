@@ -46,8 +46,11 @@ NtfsDisable8dot3NameCreation = 1
 ```
 
 1. **Apply Security Patches and Updates**
+
 - Make sure you are using the latest version of IIS and Windows.
 - Microsoft has released updates that make it harder to find file or directory information using the short name method.
+
 1. **Restrict Folder and File Access**
+
 - Use Access Control Lists (ACLs) to protect important directories and files, preventing unauthorized access even if short filename enumeration shows they exist.
 - Set up strong authorization checks in IIS to make sure only the right users can access important resources.
