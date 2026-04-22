@@ -67,14 +67,21 @@ Even if the error messages are the same, how long the server takes to respond ca
 People can measure these times and guess which usernames are real.
 
 1. **Use the Same Error Messages**
+
 - Make sure that when you log in or reset your password, the messages don't show whether a username is real or not.
 - Use the same message for everything:
-    - "Invalid login information."
-    - "If the account is real, you will get a password reset email."
+  - "Invalid login information."
+  - "If the account is real, you will get a password reset email."
+
 1. **Make Response Times the Same**
+
 - Make sure that logging in and account-related requests take the same amount of time, no matter if the username is real or not. This stops people from timing the responses.
+
 1. **Limit Attempts and Watch**
+
 - Only allow a certain number of login and reset attempts per IP address or session (like 5 attempts per minute).
 - Use Web Application Firewalls (WAF) to find and stop people from trying to guess usernames automatically.
+
 1. **Use CAPTCHA on Important Pages**
+
 - Put CAPTCHAs on login, registration, and password reset pages to stop people from guessing usernames automatically.

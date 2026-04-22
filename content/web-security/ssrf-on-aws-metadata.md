@@ -49,32 +49,32 @@ GET http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2Role
 
 1.  Now the attacker has real AWS keys and can:
 
-* List and steal S3 buckets:
+- List and steal S3 buckets:
 
 ```bash
 aws s3 ls --access-key AKIAEXAMPLE123 --secret-key wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY --token FQoGZXIvYXdzEXAMPLE...
 ```
 
-* Create or delete EC2 computers, change what IAM roles can do, or steal data.
+- Create or delete EC2 computers, change what IAM roles can do, or steal data.
 
 Here's how to prevent this:
 
-* Make rules to stop the app from talking to 169.254.169.254.
-* In AWS, turn off the old way of getting keys (IMDS v1) and use the new way (IMDSv2), which is safer:
+- Make rules to stop the app from talking to 169.254.169.254.
+- In AWS, turn off the old way of getting keys (IMDS v1) and use the new way (IMDSv2), which is safer:
 
 ```bash
 aws ec2 modify-instance-metadata-options --instance-id i-1234567890abcdef0 --http-endpoint enabled --http-tokens required
 ```
 
-* Only allow the app to fetch URLs from websites you trust.
-* Don't allow requests to go to IP addresses, localhost, or internal services.
-* Here's an example of how to check if a URL is okay:
+- Only allow the app to fetch URLs from websites you trust.
+- Don't allow requests to go to IP addresses, localhost, or internal services.
+- Here's an example of how to check if a URL is okay:
 
 ```regex
 ^(https?:\/\/(www\.)?trusted-domain\.com\/.*)$
 ```
 
-* Give each EC2 computer only the keys it needs to do its job.
-* Block keys from doing important things (like listing all S3 buckets or changing IAM roles) if they don't need to.
-* Use VPC Security Groups and NACLs (Network ACLs) to control which computers can talk to each other.
-* Make sure EC2 computers can't just ask for anything from internal services.
+- Give each EC2 computer only the keys it needs to do its job.
+- Block keys from doing important things (like listing all S3 buckets or changing IAM roles) if they don't need to.
+- Use VPC Security Groups and NACLs (Network ACLs) to control which computers can talk to each other.
+- Make sure EC2 computers can't just ask for anything from internal services.

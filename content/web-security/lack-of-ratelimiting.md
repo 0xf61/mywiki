@@ -23,17 +23,26 @@ Computer programs can keep asking for pages or functions that use a lot of the s
 If people can post things like comments or messages, bad people can fill them with spam or bad links if they can post them as much as they want.
 
 1. **Put in Request Throttling**
+
 - Use tools that watch how many requests are being made and stop or slow down requests that go over the limit.
 - Set limits based on IP addresses or user accounts to stop big bursts of requests.
+
 1. **Lock Accounts or Use Captchas**
+
 - If someone tries to log in too many times and fails, lock their account or make them prove they're not a robot by using a CAPTCHA.
 - This makes it much harder for bad people to break into accounts.
+
 1. **Make People Use Strong Passwords**
+
 - Tell people to use strong passwords and use extra security like two-factor authentication to make it harder for bad people to guess passwords, even if there are no rate limits.
 - This helps protect accounts even if rate limiting isn't perfect.
+
 1. **Watch for Strange Traffic**
+
 - Use tools to watch for big increases in requests or patterns that look like computer programs are doing them.
 - Get alerts if there are too many requests to certain parts of the website so you can do something about it quickly.
+
 1. **Use Web Application Firewalls (WAF)**
+
 - Use WAF rules to find and stop too many requests or repeated patterns aimed at important parts of the website.
 - Block or slow down bad IP addresses or suspicious traffic.

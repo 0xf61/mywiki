@@ -32,14 +32,21 @@ If a web form takes user data from a POST request and displays it on the page (e
 The response then reflects this script, causing the browser to run it whenever the victim views the result page.
 
 1. **Validate and Sanitize User Input**
+
 - Filter out or neutralize dangerous characters or HTML tags.
 - Use well-maintained libraries or frameworks that handle HTML sanitization and escaping for your language of choice.
+
 1. **Encode Output Correctly**
+
 - Escape all dynamic content when rendering in HTML, JavaScript, or other contexts.
 - For instance, use HTML encoding for data placed in HTML text nodes, and JavaScript encoding for data placed in scripts.
+
 1. **Implement a Content Security Policy (CSP)**
+
 - Configure `script-src`, `object-src`, and other directives to restrict script execution.
 - This adds a strong layer of defense if an XSS vector is discovered.
+
 1. **Use Server-Side Security Libraries and Frameworks**
+
 - If your framework supports auto-escaping or context-sensitive encoding, enable it by default.
 - Avoid crafting raw HTML strings by concatenating user input; instead, use templating systems that are XSS-aware.

@@ -15,16 +15,19 @@ A Denial of Service (DoS) attack is a malicious attempt to disrupt the normal tr
 **Attack Categories:**
 
 **Volume-Based Attacks:** Attempt to consume bandwidth between the target and the larger internet
+
 - **UDP Floods:** Send large numbers of UDP packets to random ports
 - **ICMP Floods:** Overwhelm target with ICMP Echo Request (ping) packets
 - **Amplification Attacks:** Exploit UDP protocols (DNS, NTP, SSDP) to amplify attack traffic
 
 **Protocol Attacks:** Exploit weaknesses in Layer 3 and Layer 4 protocols
+
 - **SYN Floods:** Consume server connection state tables
 - **Ping of Death:** Send malformed packets larger than maximum allowed size
 - **Smurf Attacks:** Use ICMP broadcasts with spoofed source addresses
 
 **Application Layer Attacks:** Target web applications with seemingly legitimate requests
+
 - **HTTP Floods:** Overwhelm web servers with HTTP GET/POST requests
 - **Slowloris:** Keep connections open by sending partial HTTP requests
 - **RUDY (R-U-Dead-Yet):** Send slow POST requests to exhaust server resources
@@ -46,6 +49,7 @@ Host: target.com
 ```
 
 Attackers target computationally expensive operations like:
+
 - Complex database queries with no LIMIT clauses
 - Image/video processing endpoints
 - Cryptographic operations (password hashing)
@@ -60,6 +64,7 @@ User-Agent: Mozilla/4.0
 Content-Length: 42
 X-a: b
 ```
+
 The attack sends partial HTTP headers, keeping connections open indefinitely.
 
 **Application Logic Abuse:**
@@ -142,13 +147,13 @@ def circuit_breaker(failure_threshold=5, recovery_timeout=60):
 ```yaml
 # ModSecurity rules for DoS protection
 SecRule REQUEST_HEADERS:User-Agent "@pmFromFile suspicious-agents.txt" \
-    "id:1001,phase:1,block,msg:'Suspicious User Agent'"
+"id:1001,phase:1,block,msg:'Suspicious User Agent'"
 
 SecRule IP:REQUEST_COUNT "@gt 100" \
-    "id:1002,phase:1,block,expirevar:IP.request_count=60"
+"id:1002,phase:1,block,expirevar:IP.request_count=60"
 
 SecRule REQUEST_URI "@detectSQLi" \
-    "id:1003,phase:2,block,msg:'SQL Injection Attack'"
+"id:1003,phase:2,block,msg:'SQL Injection Attack'"
 ```
 
 ### 5. **Infrastructure Scaling and Load Balancing**
@@ -167,18 +172,18 @@ spec:
   minReplicas: 3
   maxReplicas: 100
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 70
-  - type: Resource
-    resource:
-      name: memory
-      target:
-        type: Utilization
-        averageUtilization: 80
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
 ```
 
 ### 6. **Advanced Detection and Mitigation**

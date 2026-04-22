@@ -29,11 +29,16 @@ By looking at the order and type of security methods used when a secure connecti
 Here are some ways to protect against server fingerprinting:
 
 1. **Hide or Remove Version Information**
+
 - Change the server settings to hide or change the Server header or any messages that show the software version.
 - Use general header names (like "Server: Apache") or remove them if the application works fine without showing the version details.
+
 1. **Use General Error Responses**
+
 - Create custom error messages so that the server doesn't show stack traces, server names, or software information.
 - Show simple, user-friendly error messages and keep the detailed error information hidden inside the server.
+
 1. **Make TLS/SSL Configuration Stronger**
+
 - Update or replace old security libraries and only use modern security methods.
 - Regularly check your TLS settings with security tools to see if any methods or protocol versions might reveal the server libraries being used.

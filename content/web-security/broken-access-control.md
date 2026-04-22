@@ -69,8 +69,8 @@ Content-Type: application/json
 
 ```html
 <!-- Hidden form fields manipulation -->
-<input type="hidden" name="user_role" value="admin">
-<input type="hidden" name="price" value="0.01">
+<input type="hidden" name="user_role" value="admin" />
+<input type="hidden" name="price" value="0.01" />
 ```
 
 ### 7. **JSON/XML Parameter Injection**

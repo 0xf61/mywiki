@@ -30,11 +30,16 @@ In some cases, the program might show file system paths or server configuration 
 Here are some ways to prevent verbose error messages from causing problems:
 
 1. **Customize and Restrict Error Messages**
+
 - Show simple, user-friendly error messages that don't give away technical details when the program is being used by real people.
 - Only show high-level information, like "An unexpected error has occurred" or "Unable to process your request."
+
 1. **Secure Exception Handling**
+
 - Use special handlers or tools that catch errors and control how they are shown to users.
 - Keep detailed records of errors internally, but don't show them to the public.
+
 1. **Use Different Configurations for Development and Production**
+
 - When using frameworks like Django, Rails, or Express, make sure that debug settings are turned off when the program is being used by real people.
 - Production mode usually hides detailed error messages and stack traces by default.

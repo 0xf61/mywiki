@@ -21,6 +21,6 @@ Common Mistakes:
 - Unsafe or Built-In Secret Keys
 - Not Managing Keys Properly (Using Keys Again or Showing Them)
 - Not Setting Up Scrambling Correctly (Weak Starting Codes,
-ECB Mode Usage, Broken Padding)
+  ECB Mode Usage, Broken Padding)
 
 To make these risks less likely, applications should use strong secret code rules (AES-256, SHA-256, TLS 1.2+), make sure HTTPS is used for all data sending, keep and change secret keys safely, and follow good rules for scrambling passwords (bcrypt, Argon2, PBKDF2). Regular security checks should also be done to make sure secret codes are safe.

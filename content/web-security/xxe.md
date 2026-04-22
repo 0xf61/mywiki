@@ -58,15 +58,22 @@ This sequence can start network requests that contain sensitive server data to a
 Here are some ways to prevent XXE attacks:
 
 1. **Disable External Entity Resolution**
+
 - Set up the XML parser to not allow or ignore external entities.
 - For example, in Java, disable DTDs and set `XMLConstants.FEATURE_SECURE_PROCESSING` to true.
 - Each language or parser usually has settings or flags to turn off external entity expansion.
+
 1. **Use Less Complex Data Formats**
+
 - If possible, don't use XML and its complex features.
 - Consider using JSON or other formats that don't include entity expansion by default, which reduces the risk of attack.
+
 1. **Implement Whitelisting and Validation**
+
 - If external entities are really needed, make a list of allowed resources or schemas.
 - Check XML input against a safe schema that doesn't allow external references.
+
 1. **Enforce Least Privilege and Sandboxing**
+
 - Run the application with the fewest file system and network permissions possible, so that even if XXE is tried, it has limited access to files or internal endpoints.
 - Use containerization or chroot environments to limit the application's view of the file system.

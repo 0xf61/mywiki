@@ -42,16 +42,23 @@ If the API doesn't log this request, systems that detect fraud can't flag it.
 Even if logs are created, not actively checking them allows attacks to go unnoticed in real-time. Without automatic alerts, security teams have to manually look through logs, which is often too late.
 
 1. **Implement Comprehensive Logging**
+
 - Log all login events (successful logins, failed attempts, password resets).
 - Record actions by users with special permissions (admin access, permission changes, money transactions).
 - Include logs of API activity for important actions.
+
 1. **Use Secure and Tamper-Proof Log Storage**
+
 - Store logs in a way that prevents attackers from deleting their activity.
 - Use methods like cryptographic signing to prevent log tampering.
+
 1. **Enable Real-Time Monitoring and Alerts**
+
 - Use systems like Splunk, ELK Stack, or Wazuh to monitor logs.
 - Set up alerts for suspicious activity (e.g., repeated failed logins, getting unauthorized access, unusual API requests).
+
 1. **Mask or Encrypt Sensitive Data in Logs**
+
 - Avoid logging passwords, API keys, or personal data in plain text.
 
 - Example of secure logging:
@@ -67,8 +74,11 @@ Even if logs are created, not actively checking them allows attacks to go unnoti
 ```
 
 1. **Regularly Review and Audit Logs**
+
 - Check logs regularly to find unusual activity.
 - Use machine learning to find patterns that indicate a problem.
+
 1. **Ensure Log Retention Policies**
+
 - Keep logs for 6-12 months to help with investigations.
 - Use log rotation and archiving to manage storage space.

@@ -15,6 +15,7 @@ Server-Side Request Forgery (SSRF) is a critical web application vulnerability t
 
 **Attack Methodology:**
 SSRF exploits applications that fetch remote resources based on user-supplied URLs. Attackers leverage this functionality to:
+
 - **Network Reconnaissance:** Scan internal network infrastructure and identify services
 - **Cloud Metadata Exploitation:** Access AWS EC2 metadata, Azure Instance Metadata Service
 - **Internal Service Interaction:** Communicate with databases, admin panels, and APIs
@@ -23,6 +24,7 @@ SSRF exploits applications that fetch remote resources based on user-supplied UR
 - **Firewall Bypass:** Access services protected by perimeter security controls
 
 **Common Vulnerable Patterns:**
+
 - URL parameter fetching (`?url=https://example.com`)
 - Webhook endpoints accepting callback URLs
 - Image processing services accepting remote image URLs
@@ -55,6 +57,7 @@ Host: vulnerable-app.com
 ```
 
 **Response Analysis:**
+
 - **200 OK:** Service is running and accessible
 - **Connection Timeout:** Host exists but port is filtered/closed
 - **Connection Refused:** Host exists but service is not running
@@ -63,6 +66,7 @@ Host: vulnerable-app.com
 **Internal Service Discovery and Exploitation:**
 
 Organizations commonly deploy internal services on private IP ranges:
+
 - **10.0.0.0/8** (Class A private networks)
 - **172.16.0.0/12** (Class B private networks)
 - **192.168.0.0/16** (Class C private networks)

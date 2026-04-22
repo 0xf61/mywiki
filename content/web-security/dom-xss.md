@@ -18,8 +18,8 @@ Imagine some code that takes a piece of information from the website address and
 
 ```javascript
 // Example of unsafe code
-let userParam = new URLSearchParams(window.location.search).get('text');
-document.getElementById('output').innerHTML = userParam;
+let userParam = new URLSearchParams(window.location.search).get("text")
+document.getElementById("output").innerHTML = userParam
 ```
 
 If a bad person makes a website address like this:
@@ -32,21 +32,28 @@ On some websites, the website saves information in the part of the address that 
 
 ```javascript
 // Reading window.location.hash and directly showing it
-let hashContent = window.location.hash.substring(1); // e.g. '#Saying hello!'
-document.getElementById('hashOutput').innerHTML = decodeURIComponent(hashContent);
+let hashContent = window.location.hash.substring(1) // e.g. '#Saying hello!'
+document.getElementById("hashOutput").innerHTML = decodeURIComponent(hashContent)
 ```
 
 If someone visits a link with a bad message (like `https://example.com/#Saying hello!`), the bad code could run.
 
 1. **Safe Ways to Change the Page**
+
 - Use code that automatically treats what people type as regular text, not as special instructions. For example, use `textContent` instead of `innerHTML`.
 - Try not to put HTML code directly onto the page. If you have to, use special tools to clean the code and remove anything dangerous.
+
 1. **Clean and Safe Code**
+
 - When you put information on the page, make sure it's cleaned and made safe for where it's going.
 - For example, if you're putting it in an HTML page, clean it to stop bad code from running.
+
 1. **Check What People Type**
+
 - Even though DOM-based XSS avoids the server, checking and limiting what people can type in the website address can still help stop bad things from happening.
 - Use tools to find and remove any bad letters or code.
+
 1. **Website Safety Rules (CSP)**
+
 - Setting up clear website safety rules can lower the risk of bad code getting in, even if there are some DOM-based XSS problems.
 - For example, don't allow code to be written directly on the page, and only allow code from trusted sources to limit the damage from bad code.

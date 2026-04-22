@@ -21,14 +21,21 @@ Common services or software might run on their standard connections without need
 In some web programs, sample pages or tools are enabled by default for demonstration. These sample tools can show debugging information, version details, or even allow privileged actions. If they are still active when the system is used for real work, attackers can explore them for weaknesses.
 
 1. **Change Default Usernames and Passwords Immediately**
+
 - When installing, change all administrator and service accounts to have strong, unique passwords.
 - Turn off or remove any standard or guest accounts that are not being used.
+
 1. **Make Configuration Settings More Secure**
+
 - Check and set up each service's security options – turn on password requirements, limit permissions, and use secure ways of communicating.
 - Turn off or remove standard "example" programs, sample tools, or test data that are not needed for real work.
+
 1. **Limit Network Access**
+
 - Limit access to important connections by using firewalls, security groups, or network separation.
 - Close or change standard connections where possible to hide common attack paths.
+
 1. **Follow Vendor and Community Best Practices**
+
 - Read official guides or trusted community advice on how to secure the specific software or service.
 - Stay informed about known standard settings or weaknesses and use recommended fixes or updates.

@@ -64,11 +64,13 @@ SELECT name, email FROM users WHERE id = '$ID';
 ```
 
 **Resulting malicious query:**
+
 ```sql
 SELECT name, email FROM users WHERE id = '1' UNION SELECT credit_card_number, security_code FROM creditcards--';
 ```
 
 This attack allows extraction of sensitive financial data from unrelated tables. The attacker must:
+
 1. **Determine column count** using ORDER BY or UNION SELECT NULL
 2. **Identify data types** of each column
 3. **Enumerate database schema** to find valuable tables
