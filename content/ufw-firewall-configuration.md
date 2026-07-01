@@ -1,7 +1,7 @@
 ---
 title: "Basic UFW Firewall Configuration"
 draft: false
-date: 2025-05-22
+date: 2026-05-22
 tags:
   - security
   - system-administration
@@ -44,7 +44,7 @@ sudo ufw allow https
 To allow a specific IP address to access a specific port:
 
 ```bash
-sudo ufw allow from 192.168.1.100 to any port 3306
+sudo ufw allow from 192.168.1.100 to any port 3306 proto tcp
 ```
 
 ### 5. Enable the Firewall
