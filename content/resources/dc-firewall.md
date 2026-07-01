@@ -8,13 +8,14 @@ tags:
   - security
   - windows_server
 ---
+
 A computer's firewall is like a castle wall with a gatekeeper. It decides what information is allowed to come in and go out, keeping the computer safe from unwanted visitors. This guide will help you understand and set up the firewall for a very important type of computer called a Domain Controller.
 
-### What is a Domain Controller?
+## What is a Domain Controller?
 
 Imagine a kingdom where every person, house, and shop has an official record. The Domain Controller (DC) is like the kingdom's main office that manages all these records. It's a central computer that controls a network, handling user logins and security for all other computers connected to it. Because it's so important, it needs a strong firewall to protect it.
 
-### Why Use a Firewall on a Domain Controller?
+## Why Use a Firewall on a Domain Controller?
 
 Many people turn off the built-in Windows Firewall on their servers because they think it's too complicated. Instead, they rely on a network-wide firewall, which is like having guards only at the kingdom's main gate. This approach has a few problems:
 
@@ -24,11 +25,11 @@ Many people turn off the built-in Windows Firewall on their servers because they
 
 The best way to keep your Domain Controller safe is to use both a network firewall (guards at the main gate) and a host-based firewall on the DC itself (personal bodyguards for the king). This guide focuses on setting up the personal bodyguards.
 
-### Making Firewall Setup Easier with Scripts
+## Making Firewall Setup Easier with Scripts
 
 Setting up firewall rules manually can be tricky and prone to mistakes. Imagine writing down a long list of instructions by hand—it's easy to make a typo! It's much better to use a script, which is like a pre-written, perfect set of instructions that a computer can follow. This ensures the rules are always set up correctly.
 
-### Important Settings for Your Domain Controller
+## Important Settings for Your Domain Controller
 
 Here are some key things to consider when setting up your DC's firewall:
 
@@ -47,7 +48,7 @@ Here are some key things to consider when setting up your DC's firewall:
 
 *   **Filtering Outbound Traffic:** Deciding what information is allowed to *leave* the Domain Controller can be very complicated. Many essential Windows services need to connect to the internet, and it's hard to create a list of all the safe places they can talk to. A better approach is to use a separate "proxy server," which acts as a supervised gateway to the internet, only allowing traffic to approved destinations.
 
-### Advanced Firewall Techniques
+## Advanced Firewall Techniques
 
 *   **Static RPC Ports:** Some computer services use a random communication channel every time they start, which is like a secret agent changing their phone number constantly. This makes it hard for a firewall to keep track. We can tell these services to always use the same "static" channel, making it much easier to create specific firewall rules for them.
 
@@ -55,7 +56,7 @@ Here are some key things to consider when setting up your DC's firewall:
 
 *   **Disabling Old Protocols:** Some older ways of resolving computer names, like LLMNR and NetBIOS, are like using an old, unreliable town crier. Bad actors can easily impersonate the town crier to spread false information and trick computers into connecting to the wrong place. It's best to turn these old methods off and rely on the modern, secure Domain Name System (DNS).
 
-### Checking Your Work with a Port Scan
+## Checking Your Work with a Port Scan
 
 After setting up your firewall, you can use a tool like Nmap to perform a "port scan." This is like walking around the castle and checking every door and window to see if it's locked. A port scan will show you which communication channels are open, helping you verify that your firewall is blocking everything it should be.
 
