@@ -7,7 +7,7 @@ tags:
   - system-administration
 ---
 
-### 1. Check UFW Status
+## 1. Check UFW Status
 
 Ensure UFW is installed and check its current status.
 
@@ -15,7 +15,7 @@ Ensure UFW is installed and check its current status.
 sudo ufw status verbose
 ```
 
-### 2. Set Default Policies
+## 2. Set Default Policies
 
 Deny all incoming traffic and allow all outgoing traffic by default.
 
@@ -24,7 +24,7 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 ```
 
-### 3. Allow SSH Connections
+## 3. Allow SSH Connections
 
 Always allow SSH connections before enabling the firewall to prevent locking yourself out.
 
@@ -32,7 +32,7 @@ Always allow SSH connections before enabling the firewall to prevent locking you
 sudo ufw allow ssh
 ```
 
-### 4. Allow Specific Services
+## 4. Allow Specific Services
 
 Allow HTTP and HTTPS traffic for web servers.
 
@@ -47,7 +47,7 @@ To allow a specific IP address to access a specific port:
 sudo ufw allow from 192.168.1.100 to any port 3306 proto tcp
 ```
 
-### 5. Enable the Firewall
+## 5. Enable the Firewall
 
 Apply the rules and enable UFW to start on boot.
 
@@ -55,7 +55,7 @@ Apply the rules and enable UFW to start on boot.
 sudo ufw enable
 ```
 
-### 6. Delete a Rule
+## 6. Delete a Rule
 
 To remove an existing rule, view the numbered rules:
 
