@@ -1,7 +1,7 @@
 ---
 title: "How to Clean Up Unused Docker Resources"
 draft: false
-date: 2026-04-27
+date: 2026-07-01
 tags:
   - docker
   - devops
