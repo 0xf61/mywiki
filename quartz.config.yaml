@@ -200,7 +200,7 @@ plugins:
       priority: 5
       condition: not-index
   - source: github:quartz-community/comments
-    enabled: true
+    enabled: false
     options:
       provider: giscus
       options:
@@ -225,14 +225,14 @@ plugins:
         GitHub: https://github.com/jackyzha0/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
   - source: github:quartz-community/recent-notes
-    enabled: true
+    enabled: false
     options:
       title: Recent Notes
       limit: 5
       linkToMore: false
-      showTags: true
+      showTags: false
     layout:
-      position: left
+      position: right
       priority: 25
   - source: github:quartz-community/spacer
     enabled: true
