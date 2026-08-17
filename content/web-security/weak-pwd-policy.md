@@ -55,3 +55,9 @@ If you can use old passwords again, bad guys can use passwords that were stolen 
 1. **Use Good Password Hashing Methods**
 - Store passwords safely using strong methods like bcrypt, Argon2, or PBKDF2 with special salts.
 - Don't use old or unsafe methods like MD5 or SHA-1.
+
+## Related Notes
+
+- [[lack-of-brute-force-protection|Lack of Brute Force Protection]]
+- [[username-enumeration|Username Enumeration]]
+- [[security-logging-monitoring-failures|Security Logging and Monitoring Failures]]

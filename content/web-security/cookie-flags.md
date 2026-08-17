@@ -82,3 +82,9 @@ Set-Cookie: sessionid=abcd1234; Path=/; Secure; HttpOnly; SameSite=Lax;
 ```http
 Set-Cookie: sessionid=abcd1234; Path=/account; Secure; HttpOnly; SameSite=Strict;
 ```
+
+## Related Notes
+
+- [[http-security-headers|HTTP Security Headers]]
+- [[hsts|HTTP Strict Transport Security (HSTS)]]
+- [[session-fixation|Session Fixation]]

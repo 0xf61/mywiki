@@ -82,3 +82,8 @@ Here's how to prevent Code Injection:
 5.  **Apply Principle of Least Privilege**
     - Run applications with minimal necessary permissions.
     - Limit the capabilities of the user or process running the application to reduce the potential impact of a successful injection.
+
+## Related Notes
+
+- [[injection-attacks|Injection Attacks]]
+- [[sql-injection|SQL Injection]]

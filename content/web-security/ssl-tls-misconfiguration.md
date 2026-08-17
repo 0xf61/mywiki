@@ -6,7 +6,7 @@ tags:
   - owasp
   - ssl
   - tls
-  - misconfiguration
+  - security_misconfiguration
   - cryptographic_failures
   - encryption
 ---

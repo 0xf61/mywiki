@@ -43,3 +43,9 @@ Here's how to use HSTS to protect your website:
 3. **Start Slowly**
    - If you're not sure if all your subdomains are ready for HTTPS, start with a smaller `max-age` and don't use `includeSubDomains`.
    - Gradually increase the `max-age` and then add `includeSubDomains` once you're sure everything is secure.
+
+## Related Notes
+
+- [[http-security-headers|HTTP Security Headers]]
+- [[cookie-flags|Cookie Flags]]
+- [[ssl-tls-misconfiguration|SSL/TLS Misconfiguration]]

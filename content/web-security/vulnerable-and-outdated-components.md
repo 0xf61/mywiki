@@ -2,6 +2,8 @@
 title: Vulnerable and Outdated Components
 draft: false
 date: 2025-01-01
+aliases:
+  - vulnerable-and-outdated-components2
 tags:
   - owasp
   - vulnerable_components

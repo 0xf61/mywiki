@@ -106,3 +106,8 @@ Set-Cookie: JSESSIONID=abcd1234; HttpOnly; Secure; SameSite=Strict
 9. **Stop Sharing Sessions on Different Devices**
 
 - Use device fingerprinting or IP binding to only let the session be used on the device it started on.
+
+## Related Notes
+
+- [[cookie-flags|Cookie Flags]]
+- [[weak-pwd-policy|Weak Password Policy]]

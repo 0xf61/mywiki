@@ -7,7 +7,7 @@ tags:
   - lfi
   - injection
   - file_inclusion
-  - path_traversal
+  - directory_traversal
 ---
 
 Local File Inclusion (LFI) is a type of security problem that happens when a website includes files from the server without checking if the user input is safe. Usually, the website gets a file path from the user (like `?page=` in a URL) and uses this path to show content. If the website doesn't properly check this path, attackers can change it to access important files on the server.
@@ -57,3 +57,8 @@ These examples show how an attacker can use unchecked file inclusion to read sys
 4. **Filtering and Encoding**
    - Remove or encode special characters from user input (like `../`) that allow path traversal.
    - In some cases, using strong filtering can reduce the risk of LFI attacks, but whitelisting is usually more secure than blacklisting.
+
+## Related Notes
+
+- [[directory-traversal|Directory Traversal (Path Traversal)]]
+- [[injection-attacks|Injection Attacks]]

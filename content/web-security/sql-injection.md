@@ -304,3 +304,8 @@ class SQLInjectionMonitor:
             self.blocked_ips.add(ip_address)
             logging.critical(f"IP {ip_address} blocked for repeated SQL injection attempts")
 ```
+
+## Related Notes
+
+- [[injection-attacks|Injection Attacks]]
+- [[code-injection|Code Injection]]

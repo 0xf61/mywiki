@@ -2,6 +2,8 @@
 title: How to Find Hidden PPPoE Information from Your Modem
 draft: false
 date: 2025-06-01
+aliases:
+  - extract-ppoe
 tags:
   - pppoe
   - linux

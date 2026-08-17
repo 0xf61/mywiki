@@ -5,7 +5,6 @@ date: 2025-01-01
 tags:
   - owasp
   - directory_traversal
-  - path_traversal
   - file_inclusion
   - injection
 ---
@@ -49,3 +48,7 @@ Directory Traversal problems can sometimes be used with other attacks:
 4. **Use Built-In Security Features**
    - If your programming language or framework has file handling functions with path normalization or sandboxing, use them.
    - For example, in Java, `java.nio.file.Files` and `java.nio.file.Paths` can help normalize paths and lower the risk of directory traversal.
+
+## Related Notes
+
+- [[local-file-inclusion|Local File Inclusion (LFI)]]

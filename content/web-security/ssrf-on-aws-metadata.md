@@ -9,7 +9,6 @@ tags:
   - cloud_security
   - metadata_service
   - imds
-  - server_side_request_forgery
 ---
 
 Server-Side Request Forgery (SSRF) is when someone tricks a server into making requests to places it shouldn't, like internal or external services. In cloud places like AWS, this can let attackers find secret keys that control AWS stuff.
@@ -78,3 +77,8 @@ aws ec2 modify-instance-metadata-options --instance-id i-1234567890abcdef0 --htt
 * Block keys from doing important things (like listing all S3 buckets or changing IAM roles) if they don't need to.
 * Use VPC Security Groups and NACLs (Network ACLs) to control which computers can talk to each other.
 * Make sure EC2 computers can't just ask for anything from internal services.
+
+## Related Notes
+
+- [[ssrf|SSRF Overview]]
+- [[ssrf-detailed|SSRF - Detailed Analysis]]

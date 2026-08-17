@@ -50,3 +50,9 @@ If someone visits a link with a bad message (like `https://example.com/#Saying h
 1. **Website Safety Rules (CSP)**
 - Setting up clear website safety rules can lower the risk of bad code getting in, even if there are some DOM-based XSS problems.
 - For example, don't allow code to be written directly on the page, and only allow code from trusted sources to limit the damage from bad code.
+
+## Related Notes
+
+- [[reflected-xss|Reflected XSS]]
+- [[stored-xss|Stored XSS]]
+- [[injection-attacks|Injection Attacks]]

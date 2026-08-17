@@ -2,6 +2,8 @@
 title: Android SSL Certificate - Burp Setup
 draft: false
 date: 2025-05-11
+aliases:
+  - androidsslproxy
 tags:
   - android
   - proxy

@@ -4,7 +4,7 @@ draft: false
 date: 2026-05-22
 tags:
   - security
-  - system-administration
+  - sysadmin
 ---
 
 ## 1. Check UFW Status

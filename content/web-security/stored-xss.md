@@ -361,3 +361,9 @@ document.addEventListener('input', function(e) {
     }
 });
 ```
+
+## Related Notes
+
+- [[reflected-xss|Reflected XSS]]
+- [[dom-xss|DOM-based XSS]]
+- [[injection-attacks|Injection Attacks]]

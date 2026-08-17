@@ -98,3 +98,9 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-random123'
 ```http
 Referrer-Policy: strict-origin-when-cross-origin
 ```
+
+## Related Notes
+
+- [[cookie-flags|Cookie Flags]]
+- [[hsts|HTTP Strict Transport Security (HSTS)]]
+- [[ssl-tls-misconfiguration|SSL/TLS Misconfiguration]]

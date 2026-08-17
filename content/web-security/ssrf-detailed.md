@@ -5,7 +5,6 @@ date: 2025-01-01
 tags:
   - owasp
   - ssrf
-  - server_side_request_forgery
   - injection
   - cloud_security
   - internal_network
@@ -471,3 +470,8 @@ class SSRFMonitor:
         async with aiohttp.ClientSession() as session:
             await session.post(webhook_url, json=payload)
 ```
+
+## Related Notes
+
+- [[ssrf|SSRF Overview]]
+- [[ssrf-on-aws-metadata|SSRF on AWS - Cloud Metadata Attacks]]

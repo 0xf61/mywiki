@@ -4,7 +4,7 @@ draft: false
 date: 2025-01-01
 tags:
   - owasp
-  - verbose_error_messages
+  - verbose_errors
   - information_disclosure
   - error_handling
   - security_misconfiguration
