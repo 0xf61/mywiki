@@ -14,7 +14,7 @@ If you want to submit an URL you can use here:
 
 <form id="urlForm" onsubmit="submitUrl(event)">
   <label for="url">URL:</label>
-  <input type="url" id="url" name="url" placeholder="example.com" required>
+  <input type="url" id="url" name="url" placeholder="https://example.com" required>
   <button type="submit">Submit</button>
 </form>
 
@@ -25,7 +25,7 @@ function submitUrl(event) {
   const url = document.getElementById('url').value;
 
   // Using GET request to the n8n webhook with URL as a query parameter
-  fetch('https://n8n.de2.in/webhook/submit?url=' + encodeURIComponent(url), {
+  fetch('https://n8n.kurt.link/post/submit?url=' + encodeURIComponent(url), {
     method: 'GET'
   })
   .then(response => {
