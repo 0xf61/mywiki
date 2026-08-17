@@ -223,6 +223,7 @@ plugins:
     options:
       links:
         GitHub: https://github.com/0xf61
+        I ♥ RSS: https://iheartrss.com/
   - source: github:quartz-community/recent-notes
     enabled: false
     options:
