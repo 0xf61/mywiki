@@ -5,6 +5,7 @@ date: 2025-04-21
 tags:
   - privesc
   - security
+description: "Gaining shell access to a Windows server running VMware Horizon VDI, with only a restricted browser as the entry point. This blog post summarizes the clever techniques used to escalate from a browser…"
 ---
 
 Gaining shell access to a Windows server running VMware Horizon VDI, with only a restricted browser as the entry point. This blog post summarizes the clever techniques used to escalate from a browser to a full system shell, as detailed in an insightful article on System Weakness.

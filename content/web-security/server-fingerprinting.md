@@ -1,13 +1,14 @@
 ---
 title: Server Fingerprinting
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - server_fingerprinting
-  - information_disclosure
+  - server-fingerprinting
+  - information-disclosure
   - reconnaissance
-  - security_misconfiguration
+  - security-misconfiguration
+description: "Server Fingerprinting is when someone tries to find out details about a server's software, like what kind it is, what version it is, and what operating system it uses."
 ---
 
 Server Fingerprinting is when someone tries to find out details about a server's software, like what kind it is, what version it is, and what operating system it uses.

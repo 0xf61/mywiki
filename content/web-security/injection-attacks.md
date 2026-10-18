@@ -1,15 +1,16 @@
 ---
 title: Injection Attacks
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - injection
   - vulnerabilities
-  - sql_injection
+  - sql-injection
   - xss
-  - command_injection
+  - command-injection
   - xxe
+description: "Injection happens when someone puts bad input into an application, making it do things it shouldn't. This problem occurs when the application doesn't handle user input carefully, letting attackers…"
 ---
 
 Injection happens when someone puts bad input into an application, making it do things it shouldn't. This problem occurs when the application doesn't handle user input carefully, letting attackers control databases, computer systems, or other services behind the scenes. Injection attacks can cause data leaks, unauthorized access, running bad code remotely, and complete system takeover.

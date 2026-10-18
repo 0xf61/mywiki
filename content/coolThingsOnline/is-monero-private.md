@@ -6,6 +6,7 @@ tags:
   - chainalysis
   - monero
   - privacy
+description: "Monero (XMR) is a digital money that tries to keep your transactions secret. Many people and companies have tried to track Monero, but it is much harder than with Bitcoin. This guide explains, in…"
 ---
 
 Monero (XMR) is a digital money that tries to keep your transactions secret. Many people and companies have tried to track Monero, but it is much harder than with Bitcoin. This guide explains, in simple words, how Monero protects your privacy and what others have tried to break it.
@@ -59,4 +60,4 @@ Monero (XMR) is a digital money that tries to keep your transactions secret. Man
 
 Monero is still one of the best coins for privacy. No one has fully broken its privacy. The Monero team keeps making it better.
 
-[Reference](https://monero.forex/is-monero-totally-private-a-comprehensive-analysis-of-de-anonymization-attacks-against-the-privacy-coin/)
+[Reference](https://web.archive.org/web/20241223110851/https://monero.forex/is-monero-totally-private-a-comprehensive-analysis-of-de-anonymization-attacks-against-the-privacy-coin/)

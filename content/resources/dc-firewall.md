@@ -4,9 +4,10 @@ draft: false
 date: 2024-07-24
 tags:
   - firewall
-  - active_directory
+  - active-directory
   - security
-  - windows_server
+  - windows-server
+description: "A computer's firewall is like a castle wall with a gatekeeper. It decides what information is allowed to come in and go out, keeping the computer safe from unwanted visitors. This guide will help you…"
 ---
 
 A computer's firewall is like a castle wall with a gatekeeper. It decides what information is allowed to come in and go out, keeping the computer safe from unwanted visitors. This guide will help you understand and set up the firewall for a very important type of computer called a Domain Controller.

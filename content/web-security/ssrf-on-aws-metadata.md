@@ -1,14 +1,15 @@
 ---
 title: SSRF on AWS - Cloud Metadata Attacks
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - ssrf
   - aws
-  - cloud_security
-  - metadata_service
+  - cloud-security
+  - metadata-service
   - imds
+description: "Server-Side Request Forgery (SSRF) is when someone tricks a server into making requests to places it shouldn't, like internal or external services. In cloud places like AWS, this can let attackers…"
 ---
 
 Server-Side Request Forgery (SSRF) is when someone tricks a server into making requests to places it shouldn't, like internal or external services. In cloud places like AWS, this can let attackers find secret keys that control AWS stuff.

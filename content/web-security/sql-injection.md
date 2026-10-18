@@ -1,11 +1,12 @@
 ---
 title: SQL Injection
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - sql_injection
-  - database_vulnerability
+  - sql-injection
+  - database-vulnerability
+description: "A critical vulnerability occurring when user input is concatenated into SQL queries."
 ---
 
 SQL Injection is a critical web application security vulnerability that occurs when user input is directly inserted into SQL queries without proper validation or sanitization. This attack allows malicious actors to manipulate database queries, potentially leading to unauthorized data access, data modification, authentication bypass, and complete database compromise.
@@ -212,7 +213,7 @@ if user_id is None:
 
 ```sql
 -- Create restricted database user
-CREATE USER 'webapp'@'localhost' IDENTIFIED BY 'strong_password';
+CREATE USER 'webapp'@'localhost' IDENTIFIED BY 'YOUR_STRONG_PASSWORD';
 
 -- Grant minimal necessary permissions
 GRANT SELECT, INSERT, UPDATE ON myapp.users TO 'webapp'@'localhost';

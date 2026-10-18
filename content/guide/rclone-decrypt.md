@@ -7,6 +7,7 @@ tags:
   - crypt
   - password
   - config
+description: "The password that is saved on crypt remotes on ~/.config/rclone.conf is encrypted, but it can be recovered."
 ---
 
 The password that is saved on `crypt` remotes on `~/.config/rclone.conf` is encrypted, but it can be recovered.

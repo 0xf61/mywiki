@@ -1,13 +1,14 @@
 ---
 title: DOM-based Cross-Site Scripting (XSS)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - dom_based_xss
+  - dom-based-xss
   - xss
   - injection
-  - client_side
+  - client-side
+description: "DOM-based Cross-Site Scripting (XSS) is a type of XSS where the problem happens in the website code inside the browser. This means the bad stuff happens without sending the harmful information to…"
 ---
 
 DOM-based Cross-Site Scripting (XSS) is a type of XSS where the problem happens in the website code inside the browser. This means the bad stuff happens without sending the harmful information to the website's server. In DOM-based XSS, the problem starts when the website's code (like JavaScript) reads or writes information using unsafe methods (such as `document.location`, `document.write`, or `innerHTML`) with information that might be dangerous. Because of this, bad people can change the browser to put in and run bad code directly.

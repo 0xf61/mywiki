@@ -1,12 +1,12 @@
 ---
 title: Nix-ld
-description: A Solution for Issues with Pre-Compiled Executables on NixOS
 draft: false
 date: 2025-05-17
 tags:
   - nixos
   - bugfix
   - nix-ld
+description: "No such file or directory: How I stopped worrying and started loving binaries on NixOS."
 ---
 
 _No such file or directory: How I stopped worrying and started loving binaries_

@@ -1,13 +1,14 @@
 ---
 title: Lack of Rate Limiting
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - rate_limiting
-  - brute_force
+  - rate-limiting
+  - brute-force
   - dos
   - authentication
+description: "Lack of Rate Limiting is a security problem where a website or app lets people make too many requests very quickly without stopping them. This lets bad people or computer programs do things like try…"
 ---
 
 Lack of Rate Limiting is a security problem where a website or app lets people make too many requests very quickly without stopping them. This lets bad people or computer programs do things like try many passwords to break into accounts, send lots of spam, or make the website stop working for everyone else. If there are no rate limits, the website can get overloaded or people can get into accounts they shouldn't.

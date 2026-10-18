@@ -6,6 +6,7 @@ tags:
   - python
   - docker
   - optimization
+description: "Python package management can be tricky because the default package manager (pip) doesn't track dependency versions like npm does for Node.js."
 ---
 
 Python package management can be tricky because the default package manager (pip) doesn't track dependency versions like npm does for Node.js.

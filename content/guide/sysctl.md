@@ -6,6 +6,7 @@ tags:
   - sysctl
   - configuration
   - security
+description: "Here is the list of sysctl settings I use to harden the Linux kernel. You can add them to /etc/sysctl.conf or create a new file in /etc/sysctl.d/ with a .conf extension."
 ---
 
 Here is the list of sysctl settings I use to harden the Linux kernel.

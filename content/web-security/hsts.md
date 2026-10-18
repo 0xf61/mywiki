@@ -1,13 +1,14 @@
 ---
 title: HTTP Strict Transport Security (HSTS)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - hsts
   - tls
   - ssl
-  - cryptographic_failures
+  - cryptographic-failures
+description: "HTTP Strict Transport Security (HSTS) is a security feature that helps protect websites from attacks that try to weaken the connection or steal cookies. When a website uses HSTS, it tells browsers…"
 ---
 
 HTTP Strict Transport Security (HSTS) is a security feature that helps protect websites from attacks that try to weaken the connection or steal cookies. When a website uses HSTS, it tells browsers to only connect to it using a secure HTTPS connection for a certain amount of time. This means that even if someone tries to visit the site using a regular HTTP connection, the browser will automatically switch to HTTPS. This helps prevent people from accidentally using an insecure connection.

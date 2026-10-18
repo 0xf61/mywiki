@@ -1,17 +1,18 @@
 ---
 title: Vulnerable and Outdated Components
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 aliases:
   - vulnerable-and-outdated-components2
 tags:
   - owasp
-  - vulnerable_components
+  - vulnerable-components
   - software
   - dependencies
   - cve
-  - third_party_libraries
-  - outdated_software
+  - third-party-libraries
+  - outdated-software
+description: "Vulnerable and Outdated Components happen when applications use old, unpatched, or unsafe third-party libraries, frameworks, or dependencies, which can expose them to known vulnerabilities.…"
 ---
 
 Vulnerable and Outdated Components happen when applications use old, unpatched, or unsafe third-party libraries, frameworks, or dependencies, which can expose them to known vulnerabilities. Attackers can use these weaknesses to run any code, gain more privileges, steal data, or compromise entire systems. Not updating or patching components increases the risk of attacks and software exploits.

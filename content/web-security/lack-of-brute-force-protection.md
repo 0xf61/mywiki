@@ -1,14 +1,15 @@
 ---
 title: Lack of Brute Force Protection
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - brute_force
+  - brute-force
   - protection
   - authentication
-  - rate_limiting
-  - account_lockout
+  - rate-limiting
+  - account-lockout
+description: "Lack of brute-force protection happens when a program doesn't have ways to stop or find repeated, automatic login tries. This lets attackers guess passwords, PINs, codes, or tokens using tools."
 ---
 
 Lack of brute-force protection happens when a program doesn't have ways to stop or find repeated, automatic login tries. This lets attackers guess passwords, PINs, codes, or tokens using tools.

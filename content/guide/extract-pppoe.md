@@ -7,6 +7,7 @@ aliases:
 tags:
   - pppoe
   - linux
+description: "It's 2025, and some ISPs still hide these PPPoE login details. I don't really understand their logic. They don't want customers to use other devices, but why? I don't have the answer to this…"
 ---
 
 It's 2025, and some ISPs still hide these PPPoE login details. I don't really understand their logic. They don't want customers to use other devices, but why? I don't have the answer to this question. If you know, I would appreciate it if you could comment.
@@ -134,4 +135,4 @@ chmod 0774 /var/log/pppoe-server.log
 
 You can do all the above operations with a virtual machine, in that case, do not neglect to port mirror.
 
-[Reference](https://mertcangokgoz.com/gizli-olan-pppoe-modemden-nasil-ogrenilir/)
+[Reference](https://web.archive.org/web/20231126155344/https://mertcangokgoz.com/gizli-olan-pppoe-modemden-nasil-ogrenilir/)

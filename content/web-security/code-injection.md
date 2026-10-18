@@ -1,12 +1,13 @@
 ---
 title: Code Injection
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - code_injection
+  - code-injection
   - injection
-  - remote_code_execution
+  - remote-code-execution
+description: "Code Injection is a significant security vulnerability that occurs when an attacker can send malicious code or input to an application, and the application executes it as part of its own code. This…"
 ---
 
 Code Injection is a significant security vulnerability that occurs when an attacker can send malicious code or input to an application, and the application executes it as part of its own code. This typically happens when user input is processed without proper validation or sanitization. If successful, an attacker could gain control over the application or the underlying system.

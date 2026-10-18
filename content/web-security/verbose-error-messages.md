@@ -1,13 +1,14 @@
 ---
 title: Verbose Error Messages
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - verbose_errors
-  - information_disclosure
-  - error_handling
-  - security_misconfiguration
+  - verbose-errors
+  - information-disclosure
+  - error-handling
+  - security-misconfiguration
+description: "Verbose Error Messages happen when a program shows too much information about what's going on inside when something goes wrong. This can include details about how it's set up, how it works, or even…"
 ---
 
 Verbose Error Messages happen when a program shows too much information about what's going on inside when something goes wrong. This can include details about how it's set up, how it works, or even the way the database is organized. While it's helpful to have detailed error messages when you're creating a program, it's not a good idea to leave them on when the program is being used by real people. This is because these messages can show attackers important details like file paths, specific commands, or setup information. Attackers can use this information to find weaknesses in the program or figure out how to cause more problems.

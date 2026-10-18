@@ -5,6 +5,7 @@ date: 2025-05-31
 tags:
   - postgresql
   - database
+description: "Sometimes, a user with limited permissions is needed, only to read and get metrics. For such cases, you can use the following SQL code:"
 ---
 
 Sometimes, a user with limited permissions is needed, only to read and get metrics. For such cases, you can use the following SQL code:

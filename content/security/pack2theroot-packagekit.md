@@ -6,6 +6,7 @@ tags:
   - cve
   - privesc
   - linux
+description: "A high-severity (CVSS 3.1: 8.8) local privilege escalation vulnerability in PackageKit, nicknamed Pack2TheRoot. It was discovered by Deutsche Telekom's Red Team and disclosed on 2026-04-22. Any local…"
 ---
 
 A high-severity (CVSS 3.1: 8.8) local privilege escalation vulnerability in PackageKit, nicknamed **Pack2TheRoot**. It was discovered by Deutsche Telekom's Red Team and disclosed on 2026-04-22. Any local unprivileged user can exploit it to gain root on a default installation of many major Linux distributions.

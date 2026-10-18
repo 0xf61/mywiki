@@ -5,6 +5,7 @@ date: 2025-06-04
 tags:
   - terraform
   - aws
+description: "I prefer not to manage databases myself. Hosting it on your own computer might be cheaper, but I don't want to constantly worry about backups, database upgrades, and maintenance."
 ---
 
 I prefer not to manage databases myself. Hosting it on your own computer might be cheaper, but I don't want to constantly worry about backups, database upgrades, and maintenance.

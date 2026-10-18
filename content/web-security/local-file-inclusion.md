@@ -1,13 +1,14 @@
 ---
 title: Local File Inclusion (LFI)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - lfi
   - injection
-  - file_inclusion
-  - directory_traversal
+  - file-inclusion
+  - directory-traversal
+description: "Local File Inclusion (LFI) is a type of security problem that happens when a website includes files from the server without checking if the user input is safe. Usually, the website gets a file path…"
 ---
 
 Local File Inclusion (LFI) is a type of security problem that happens when a website includes files from the server without checking if the user input is safe. Usually, the website gets a file path from the user (like `?page=` in a URL) and uses this path to show content. If the website doesn't properly check this path, attackers can change it to access important files on the server.

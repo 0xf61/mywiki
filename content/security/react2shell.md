@@ -8,6 +8,7 @@ tags:
   - nextjs
   - cve
   - rce
+description: "A walkthrough of the critical React Server Components deserialization flaw (CVSS 10.0), how the public exploit chain works under the hood, and what it takes to turn it into a reliable one-shot…"
 ---
 
 _A walkthrough of the critical React Server Components deserialization flaw (CVSS 10.0), how the public exploit chain works under the hood, and what it takes to turn it into a reliable one-shot command execution primitive — including a post-exploitation technique against exposed Node.js inspector instances._

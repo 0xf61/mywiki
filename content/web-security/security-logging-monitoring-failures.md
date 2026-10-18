@@ -1,16 +1,17 @@
 ---
 title: Security Logging and Monitoring Failures
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 aliases:
   - Insufficient Logging and Monitoring
 tags:
   - owasp
   - logging
   - monitoring
-  - incident_response
+  - incident-response
   - siem
-  - audit_trails
+  - audit-trails
+description: "Security Logging and Monitoring Failures happen when a program doesn't record, check, or react to important security events well enough. Without good logging, attackers can stay hidden for a long…"
 ---
 
 Security Logging and Monitoring Failures happen when a program doesn't record, check, or react to important security events well enough. Without good logging, attackers can stay hidden for a long time, possibly stealing important data or getting more power without anyone noticing.

@@ -1,14 +1,15 @@
 ---
 title: Cryptographic Failures
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - cryptographic_failures
+  - cryptographic-failures
   - encryption
-  - data_protection
+  - data-protection
   - tls
   - ssl
+description: "Cryptographic failures happen when important information is not well protected using secret codes, scrambling, or safe key handling. This can cause information to be seen by others, unauthorized…"
 ---
 
 Cryptographic failures happen when important information is not well protected using secret codes, scrambling, or safe key handling. This can cause information to be seen by others, unauthorized entry, and data problems, especially when weak secret codes, bad key storage, or sending data in plain text are involved. Attackers use these weaknesses to steal login details, unscramble secret information, or change scrambled data.

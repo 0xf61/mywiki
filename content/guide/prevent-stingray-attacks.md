@@ -6,6 +6,7 @@ tags:
   - android
   - security
   - privacy
+description: "In this guide, we will explore what stingrays are, how they pose a threat to your privacy, and the steps you can take to protect yourself by disabling 2G on your Android device."
 ---
 
 ## Introduction

@@ -1,12 +1,13 @@
 ---
 title: Stored Cross-Site Scripting (XSS)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - xss
-  - stored_xss
+  - stored-xss
   - injection
+description: "Stored Cross-Site Scripting (XSS) is a persistent web application vulnerability where malicious scripts are permanently stored on the target server (in databases, files, or other storage mechanisms)…"
 ---
 
 Stored Cross-Site Scripting (XSS) is a persistent web application vulnerability where malicious scripts are permanently stored on the target server (in databases, files, or other storage mechanisms) and subsequently served to users without proper sanitization. Unlike reflected XSS, which requires user interaction with a malicious link, stored XSS affects all users who access the compromised content, making it significantly more dangerous.

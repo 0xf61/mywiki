@@ -1,13 +1,14 @@
 ---
 title: Username Enumeration
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - username_enumeration
+  - username-enumeration
   - authentication
   - reconnaissance
-  - information_disclosure
+  - information-disclosure
+description: "Username Enumeration happens when someone tries to find out if a username is real on an application by looking at how the system responds."
 ---
 
 Username Enumeration happens when someone tries to find out if a username is real on an application by looking at how the system responds.

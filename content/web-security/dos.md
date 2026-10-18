@@ -1,13 +1,14 @@
 ---
 title: Denial of Service (DoS) Attacks
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - dos
   - ddos
   - availability
-  - rate_limiting
+  - rate-limiting
+description: "A Denial of Service (DoS) attack is a malicious attempt to disrupt the normal traffic of a targeted server, service, or network by overwhelming the target or its surrounding infrastructure with a…"
 ---
 
 A Denial of Service (DoS) attack is a malicious attempt to disrupt the normal traffic of a targeted server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. DoS attacks accomplish this disruption by using multiple compromised computer systems to generate attack traffic, making legitimate requests unable to be processed.

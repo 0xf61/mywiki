@@ -8,6 +8,7 @@ tags:
   - opencode
   - omniroute
   - token-optimization
+description: "Free coding models got good. The catch is no longer quality. It is quota and context window. A free tier dies mid-session. Tool spam fills the context. The model hallucinates APIs it barely knows."
 ---
 
 Free coding models got good. The catch is no longer quality. It is **quota and context window**. A free tier dies mid-session. Tool spam fills the context. The model hallucinates APIs it barely knows.
@@ -63,7 +64,7 @@ OmniRoute starts safer than most local routers: loopback bind by default, a rand
 
 Until traffic actually flows through the router, none of its compression or fallback does anything. This is the step people skip — then wonder why nothing improved.
 
-**Home-server variant (Raspberry Pi 5, arm64).** The official image runs on small machines — ~1.4 GB on disk, but the node process idles at tens of MB. Everything in one file — the secrets are generated the moment you create it, and `REQUIRE_API_KEY=true` is set on purpose (the shipped default is `false`):
+**Home-server variant (Raspberry Pi 5, arm64).** The official image runs on small machines — a 446 MB download, ~1.4 GB on disk, and a few hundred MB of RAM at idle (it is a full Next.js app). The redis sidecar exists only as the rate-limiter backend; npm installs run without any redis. Everything in one file — the secrets are generated the moment you create it, and `REQUIRE_API_KEY=true` is set on purpose (the shipped default is `false`):
 
 ```bash
 cat > docker-compose.yml <<EOF

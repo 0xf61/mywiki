@@ -1,11 +1,12 @@
 ---
 title: Server-Side Request Forgery (SSRF)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - ssrf
   - injection
+description: "Server-Side Request Forgery (SSRF) happens when someone tricks a server into making requests it shouldn't. This can let them steal information, scan the internal network, find cloud information, and…"
 ---
 
 Server-Side Request Forgery (SSRF) happens when someone tricks a server into making requests it shouldn't. This can let them steal information, scan the internal network, find cloud information, and mess with services. SSRF is very dangerous when apps let users control URLs or don't stop requests from going out.

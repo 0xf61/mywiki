@@ -1,14 +1,15 @@
 ---
 title: Software and Data Integrity Failures
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - software_integrity
-  - data_integrity
-  - supply_chain_attacks
-  - ci_cd_security
-  - digital_signatures
+  - software-integrity
+  - data-integrity
+  - supply-chain-attacks
+  - ci-cd-security
+  - digital-signatures
+description: "Software and Data Integrity Failures happen when applications don't check if software updates, important data, or things they rely on are correct."
 ---
 
 Software and Data Integrity Failures happen when applications don't check if software updates, important data, or things they rely on are correct.

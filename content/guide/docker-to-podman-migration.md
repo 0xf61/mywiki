@@ -5,6 +5,7 @@ draft: false
 tags:
   - darwin
   - docker
+description: "Lately, Docker Desktop on Mac has been behaving strangely, especially with its inconsistent memory use."
 ---
 
 Lately, Docker Desktop on Mac has been behaving strangely, especially with its inconsistent memory use.

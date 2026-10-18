@@ -1,14 +1,15 @@
 ---
 title: SSL/TLS Misconfiguration
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - ssl
   - tls
-  - security_misconfiguration
-  - cryptographic_failures
+  - security-misconfiguration
+  - cryptographic-failures
   - encryption
+description: "SSL/TLS Misconfiguration is a broad category of security problems when a web server's Secure Sockets Layer (SSL) or Transport Layer Security (TLS) rules are not set up correctly. This includes using…"
 ---
 
 SSL/TLS Misconfiguration is a broad category of security problems when a web server's Secure Sockets Layer (SSL) or Transport Layer Security (TLS) rules are not set up correctly. This includes using old protocol versions (like SSLv3 or early TLS versions), weak or outdated ways to encrypt data, and wrong certificate management.

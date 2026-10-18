@@ -6,9 +6,10 @@ tags:
   - archlinux
   - dns
   - caching
+description: "Pdnsd is a DNS server that saves DNS information locally This can make browsing the internet faster if set up correctly"
 ---
 
-[pdnsd](http://members.home.nl/p.a.rombouts/pdnsd/index.html)
+[pdnsd](https://web.archive.org/web/20120517185733/http://members.home.nl/p.a.rombouts/pdnsd/index.html)
 is a DNS server that saves DNS information locally
 This can make browsing the internet faster if set up correctly
 Compared to [BIND](https://wiki.archlinux.org/title/BIND "BIND") or

@@ -1,14 +1,15 @@
 ---
 title: Weak Password Policy
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - weak_password_policy
+  - weak-password-policy
   - authentication
-  - password_security
-  - brute_force
-  - credential_attacks
+  - password-security
+  - brute-force
+  - credential-attacks
+description: "A Weak Password Policy happens when a program lets people make passwords that are easy to guess, short, or not complicated enough. This makes it easier for bad guys to break into accounts. Weak…"
 ---
 
 A Weak Password Policy happens when a program lets people make passwords that are easy to guess, short, or not complicated enough. This makes it easier for bad guys to break into accounts. Weak passwords like "123456" or "password" can be cracked very quickly.

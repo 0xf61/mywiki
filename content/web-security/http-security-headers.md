@@ -1,15 +1,16 @@
 ---
 title: HTTP Security Headers
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - http_headers
-  - security_headers
-  - security_misconfiguration
+  - http-headers
+  - security-headers
+  - security-misconfiguration
   - hsts
   - csp
   - xss
+description: "HTTP Headers are very important for web security. They give extra information about what's sent between computers (clients) and servers. If these headers are not set up correctly, or if they are…"
 ---
 
 HTTP Headers are very important for web security. They give extra information about what's sent between computers (clients) and servers. If these headers are not set up correctly, or if they are missing, bad things can happen. For example, hackers can use Cross-Site Scripting (XSS), Clickjacking, or Man-in-the-Middle (MitM) attacks to steal information. Setting up HTTP headers the right way makes websites safer by making sure computers talk securely, stopping bad things browsers might do, and fixing common problems that hackers use.

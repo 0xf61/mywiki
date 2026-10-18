@@ -5,6 +5,7 @@ date: 2026-05-22
 tags:
   - security
   - sysadmin
+description: "Ensure UFW is installed and check its current status. Deny all incoming traffic and allow all outgoing traffic by default."
 ---
 
 ## 1. Check UFW Status

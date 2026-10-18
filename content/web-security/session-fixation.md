@@ -1,13 +1,14 @@
 ---
 title: Session Fixation
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - session_fixation
-  - web_vulnerability
-  - session_management
+  - session-fixation
+  - web-vulnerability
+  - session-management
   - authentication
+description: "Session Fixation is a security problem where someone can make you use a session ID that they already know. This lets them take over your session after you log in. This can happen if the website…"
 ---
 
 Session Fixation is a security problem where someone can make you use a session ID that they already know. This lets them take over your session after you log in. This can happen if the website doesn't give you a new session ID after you log in. Instead, someone could set a session ID before you log in and then use it again after you log in.

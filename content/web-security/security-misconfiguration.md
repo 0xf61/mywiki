@@ -1,13 +1,14 @@
 ---
 title: Security Misconfiguration
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - security_misconfiguration
+  - security-misconfiguration
   - configuration
-  - server_hardening
-  - default_credentials
+  - server-hardening
+  - default-credentials
+description: "Security Misconfiguration happens when apps, servers, or systems are set up with unsafe default settings, open configurations, or wrong permissions, which can make them easy to attack. These…"
 ---
 
 Security Misconfiguration happens when apps, servers, or systems are set up with unsafe default settings, open configurations, or wrong permissions, which can make them easy to attack. These mistakes often happen because of features that aren't needed, too many privileges, old software, or not making the security strong enough. This can cause data to leak, unauthorized people to get in, and systems to be damaged.

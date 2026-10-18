@@ -5,6 +5,7 @@ date: 2025-06-18
 tags:
   - tips
   - github
+description: "GitHub's user interface has gotten much better over the years, but sometimes you just need quick access without clicking. Here are a few GitHub URL tips to get you the data you want faster. One cool…"
 ---
 
 GitHub's user interface has gotten much better over the years, but sometimes you just need quick access without clicking. Here are a few GitHub URL tips to get you the data you want faster. One cool thing is that all of these tips give raw text output, so they work great with `curl` and other CLI tools.

@@ -1,13 +1,14 @@
 ---
 title: Server-Side Request Forgery (SSRF) - Detailed Analysis
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - ssrf
   - injection
-  - cloud_security
-  - internal_network
+  - cloud-security
+  - internal-network
+description: "Server-Side Request Forgery (SSRF) is a critical web application vulnerability that occurs when an attacker can induce a server-side application to make HTTP requests to arbitrary domains of the…"
 ---
 
 Server-Side Request Forgery (SSRF) is a critical web application vulnerability that occurs when an attacker can induce a server-side application to make HTTP requests to arbitrary domains of the attacker's choosing. This vulnerability enables attackers to bypass network access controls, scan internal networks, access cloud metadata services, and interact with internal services that are not directly accessible from the internet.
