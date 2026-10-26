@@ -39,7 +39,7 @@ How Apache Tomcat reads cookie headers:
 - The parser uses both
   [RFC6265](https://datatracker.ietf.org/doc/html/rfc6265) and
   [RFC2109](https://datatracker.ietf.org/doc/html/rfc2109) standards. If a string starts with the special
-  [$Version](https://github.com/apache/tomcat/blob/4111137da8712add015a4193da0f7d4d9248941e/java/org/apache/tomcat/util/http/parser/Cookie.java%23L147) attribute, it uses the old way of reading it.
+  [$Version](https://github.com/apache/tomcat/blob/4111137da8712add015a4193da0f7d4d9248941e/java/org/apache/tomcat/util/http/parser/Cookie.java#L147) attribute, it uses the old way of reading it.
 
 - If a cookie value starts with double quotes, it reads until the next double quote that isn't canceled out.
 

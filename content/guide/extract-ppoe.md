@@ -132,4 +132,4 @@ chmod 0774 /var/log/pppoe-server.log
 
 You can do all the above operations with a virtual machine, in that case, do not neglect to port mirror.
 
-[Reference](https://mertcangokgoz.com/gizli-olan-pppoe-modemden-nasil-ogrenilir/)
+[Reference](http://web.archive.org/web/20251208230926/https://mertcangokgoz.com/gizli-olan-pppoe-modemden-nasil-ogrenilir/)

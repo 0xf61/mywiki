@@ -59,4 +59,4 @@ Monero (XMR) is a digital money that tries to keep your transactions secret. Man
 
 Monero is still one of the best coins for privacy. No one has fully broken its privacy. The Monero team keeps making it better.
 
-[Reference](https://monero.forex/is-monero-totally-private-a-comprehensive-analysis-of-de-anonymization-attacks-against-the-privacy-coin/)
+[Reference](http://web.archive.org/web/20251005055231/https://monero.forex/is-monero-totally-private-a-comprehensive-analysis-of-de-anonymization-attacks-against-the-privacy-coin/)
