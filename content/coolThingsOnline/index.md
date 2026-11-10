@@ -1,6 +1,7 @@
 ---
 title: Cool Things Online
 draft: false
+description: "I use Firecrawl and simple AI tools to build my own online pocket alternative. I save webpages that I really enjoy reading or want to mention in my posts. I keep them here for easy access."
 ---
 
 I use [Firecrawl](https://www.firecrawl.dev/) and simple AI tools to build my own online pocket alternative.

@@ -1,12 +1,13 @@
 ---
 title: Insecure Direct Object References (IDOR)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - idor
-  - access_control
+  - access-control
   - authorization
+description: "Insecure Direct Object Reference (IDOR) is a type of problem that happens when a program uses information given by a user to get to things inside it, like files or records in a computer's memory.…"
 ---
 
 Insecure Direct Object Reference (IDOR) is a type of problem that happens when a program uses information given by a user to get to things inside it, like files or records in a computer's memory. This can be a problem if the program doesn't check carefully to make sure the user is allowed to see or change those things. If it doesn't, someone could trick the program into showing them things they shouldn't see, or letting them change things they shouldn't change.

@@ -1,11 +1,12 @@
 ---
 title: Broken Access Control
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - access_control
+  - access-control
   - rbac
+description: "Broken Access Control is a critical security vulnerability that occurs when applications fail to properly enforce authorization policies, allowing users to access resources, perform actions, or view…"
 ---
 
 Broken Access Control is a critical security vulnerability that occurs when applications fail to properly enforce authorization policies, allowing users to access resources, perform actions, or view data beyond their intended privileges. This vulnerability manifests when access control mechanisms are improperly implemented, missing, or can be bypassed through manipulation of requests, URLs, or application state.

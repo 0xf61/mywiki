@@ -1,11 +1,12 @@
 ---
 title: Authorization Bypass
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - bypass
-  - access_control
+  - access-control
+description: "Authorization Bypass is a security problem where a program doesn't check permissions properly. This lets bad people get to things or do things they shouldn't be able to. It usually happens because…"
 ---
 
 Authorization Bypass is a security problem where a program doesn't check permissions properly. This lets bad people get to things or do things they shouldn't be able to. It usually happens because the rules for who can do what are weak or not complete. Even if someone doesn't have the right permissions, they can trick the system (by guessing links, changing settings, or messing with how the system remembers them) to get into places or do things they're not allowed to. Sometimes, programmers think it's enough to check things on the user's side of the computer, but they don't protect the important parts on the server.

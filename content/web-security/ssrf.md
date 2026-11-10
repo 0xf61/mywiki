@@ -1,12 +1,12 @@
 ---
 title: Server-Side Request Forgery (SSRF)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - ssrf
-  - server_side_request_forgery
   - injection
+description: "Server-Side Request Forgery (SSRF) happens when someone tricks a server into making requests it shouldn't. This can let them steal information, scan the internal network, find cloud information, and…"
 ---
 
 Server-Side Request Forgery (SSRF) happens when someone tricks a server into making requests it shouldn't. This can let them steal information, scan the internal network, find cloud information, and mess with services. SSRF is very dangerous when apps let users control URLs or don't stop requests from going out.
@@ -21,3 +21,8 @@ Common Problems:
 - Making the app do bad things to other services
 
 To make things safer, apps should check user-given URLs, only allow certain outgoing requests, block access to internal IP addresses (like 127.0.0.1, 169.254.169.254), and use metadata service version 2 (IMDSv2) in AWS. Also, keeping track of outgoing requests can help find and stop SSRF attempts.
+
+## Deep Dives
+
+- [[ssrf-detailed|SSRF - Detailed Analysis]] — attack methodology, exploitation payloads, and mitigations in depth
+- [[ssrf-on-aws-metadata|SSRF on AWS - Cloud Metadata Attacks]] — IMDS abuse, credential theft, and IMDSv2 hardening

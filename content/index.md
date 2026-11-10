@@ -4,6 +4,7 @@ draft: false
 date: 2025-04-21
 # tags:
 #   - tags
+description: "Hello! Welcome to my public knowledge base, where I share my notes, solutions, and ideas with everyone."
 ---
 
 Hello! Welcome to my public knowledge base, where I share my notes, solutions, and ideas with everyone.

@@ -6,6 +6,7 @@ tags:
   - docker
   - devops
   - sysadmin
+description: "Docker containers can generate large amounts of log data, potentially consuming all available disk space if not managed. This issue can be prevented by configuring log rotation."
 ---
 
 Docker containers can generate large amounts of log data, potentially consuming all available disk space if not managed. This issue can be prevented by configuring log rotation.

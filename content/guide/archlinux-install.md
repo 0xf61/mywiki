@@ -7,6 +7,7 @@ tags:
   - systemd-boot
   - btrfs
   - luks
+description: "Download the ISO file from Link. Identify the connected USB drive using lsblk as /dev/sd[a|b|c], and write the ISO file to the drive."
 ---
 
 ## Writing the ISO File

@@ -1,13 +1,14 @@
 ---
 title: CAPTCHA Bypass
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - captcha
   - bypass
   - authentication
-  - automated_attacks
+  - automated-attacks
+description: "A CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) is a test designed to tell apart real people from computer programs. Many CAPTCHAs can be tricked because of…"
 ---
 
 A CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) is a test designed to tell apart real people from computer programs. Many CAPTCHAs can be tricked because of problems in how they are made or used. Attackers take advantage of these problems to automatically fill out forms, make fake accounts, or do many things at once without being stopped by the CAPTCHA.

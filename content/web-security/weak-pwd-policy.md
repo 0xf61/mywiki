@@ -1,14 +1,15 @@
 ---
 title: Weak Password Policy
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - weak_password_policy
+  - weak-password-policy
   - authentication
-  - password_security
-  - brute_force
-  - credential_attacks
+  - password-security
+  - brute-force
+  - credential-attacks
+description: "A Weak Password Policy happens when a program lets people make passwords that are easy to guess, short, or not complicated enough. This makes it easier for bad guys to break into accounts. Weak…"
 ---
 
 A Weak Password Policy happens when a program lets people make passwords that are easy to guess, short, or not complicated enough. This makes it easier for bad guys to break into accounts. Weak passwords like "123456" or "password" can be cracked very quickly.
@@ -55,3 +56,9 @@ If you can use old passwords again, bad guys can use passwords that were stolen 
 1. **Use Good Password Hashing Methods**
 - Store passwords safely using strong methods like bcrypt, Argon2, or PBKDF2 with special salts.
 - Don't use old or unsafe methods like MD5 or SHA-1.
+
+## Related Notes
+
+- [[lack-of-brute-force-protection|Lack of Brute Force Protection]]
+- [[username-enumeration|Username Enumeration]]
+- [[security-logging-monitoring-failures|Security Logging and Monitoring Failures]]

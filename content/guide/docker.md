@@ -4,6 +4,7 @@ draft: false
 date: 2025-05-11
 tags:
   - docker
+description: "If the --privileged argument is not preferred, the required mounts are as follows."
 ---
 
 If the `--privileged` argument is not preferred, the required mounts are as follows.

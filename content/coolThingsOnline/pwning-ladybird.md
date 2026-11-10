@@ -7,6 +7,7 @@ tags:
   - security
   - pwn
   - exploit
+description: "Ladybird is a new browser engine that comes from the SerenityOS project. It is still being made better. Look at the website and the GitHub for more information!"
 ---
 
 ## Intro
@@ -438,6 +439,6 @@ We close the tab, which will make the stack collapse and run the ROP chain.
 
 Below is a video of the code running!
 
-![laydibrd](https://jessie.cafe/posts/pwning-ladybirds-libjs/files/ladybird-uaf.mp4)
+<video controls src="https://jessie.cafe/posts/pwning-ladybirds-libjs/files/ladybird-uaf.mp4"></video>
 
 [Reference](https://jessie.cafe/posts/pwning-ladybirds-libjs/)

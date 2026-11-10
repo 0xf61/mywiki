@@ -6,6 +6,7 @@ tags:
   - ai
   - copilot
   - ai-models
+description: "I need to know which Copilot models are available in my current environment. I found that"
 ---
 
 I need to know which Copilot models are available in my current environment.

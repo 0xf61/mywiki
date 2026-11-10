@@ -1,14 +1,15 @@
 ---
 title: XML External Entity (XXE) Injection
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - xml
   - xxe
   - injection
-  - file_inclusion
-  - xml_injection
+  - file-inclusion
+  - xml-injection
+description: "XML External Entity (XXE) vulnerabilities happen when an application uses XML input that refers to external things. By changing these external entity declarations, attackers can read local files or…"
 ---
 
 XML External Entity (XXE) vulnerabilities happen when an application uses XML input that refers to external things. By changing these external entity declarations, attackers can read local files or start network requests from the server. In very bad cases, they can even control the computer from far away. XXE usually takes advantage of parsing libraries or features in XML processors that automatically get external resources without checking them well enough.
@@ -70,3 +71,8 @@ Here are some ways to prevent XXE attacks:
 1. **Enforce Least Privilege and Sandboxing**
 - Run the application with the fewest file system and network permissions possible, so that even if XXE is tried, it has limited access to files or internal endpoints.
 - Use containerization or chroot environments to limit the application's view of the file system.
+
+## Related Notes
+
+- [[injection-attacks|Injection Attacks]]
+- [[code-injection|Code Injection]]

@@ -1,13 +1,13 @@
 ---
 title: Directory Traversal (Path Traversal)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - directory_traversal
-  - path_traversal
-  - file_inclusion
+  - directory-traversal
+  - file-inclusion
   - injection
+description: "Directory Traversal (also called Path Traversal) is a security problem that lets attackers get to files or folders outside where they should be able to in a website's file system. This usually…"
 ---
 
 Directory Traversal (also called Path Traversal) is a security problem that lets attackers get to files or folders outside where they should be able to in a website's file system. This usually happens when the website doesn't check or clean user input that says which file path to use. Attackers use special characters (like `../`) to go up the folder tree and find important system files or website data.
@@ -49,3 +49,7 @@ Directory Traversal problems can sometimes be used with other attacks:
 4. **Use Built-In Security Features**
    - If your programming language or framework has file handling functions with path normalization or sandboxing, use them.
    - For example, in Java, `java.nio.file.Files` and `java.nio.file.Paths` can help normalize paths and lower the risk of directory traversal.
+
+## Related Notes
+
+- [[local-file-inclusion|Local File Inclusion (LFI)]]

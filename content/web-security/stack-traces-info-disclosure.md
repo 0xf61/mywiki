@@ -1,14 +1,15 @@
 ---
 title: Stack Traces - Information Disclosure
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - stack_traces
-  - error_handling
-  - information_disclosure
-  - verbose_errors
-  - security_misconfiguration
+  - stack-traces
+  - error-handling
+  - information-disclosure
+  - verbose-errors
+  - security-misconfiguration
+description: "Stack traces are like a detailed record of what a program was doing when it had a problem or error. When making a program, this record is super helpful to find and fix the problem. It shows which…"
 ---
 
 Stack traces are like a detailed record of what a program was doing when it had a problem or error. When making a program, this record is super helpful to find and fix the problem. It shows which parts of the program were running, where the error happened, and sometimes what tools or helpers the program was using.

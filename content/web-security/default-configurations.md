@@ -1,13 +1,14 @@
 ---
 title: Default Configurations - Security Risk
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - default_configurations
-  - security_misconfiguration
+  - default-configurations
+  - security-misconfiguration
   - hardening
-  - default_credentials
+  - default-credentials
+description: "Default configurations refer to the standard settings, usernames, or functions provided by software or systems when first installed. These standard settings often focus on easy setup but might not…"
 ---
 
 Default configurations refer to the standard settings, usernames, or functions provided by software or systems when first installed. These standard settings often focus on easy setup but might not be secure enough for real-world use. Attackers take advantage of well-known default usernames, passwords, settings, or open connections to gain unauthorized access or to perform other attacks.

@@ -6,6 +6,7 @@ tags:
   - zerotier
   - zerotrust
   - network
+description: "Zerotier is a service that can be used to create a zero-trust network. It acts as a relay service between devices on different networks without a central server. This lets you establish a local…"
 ---
 
 [Zerotier](https://www.zerotier.com/) is a service that can be used to create a zero-trust network. It acts as a relay service between devices on different networks without a central server. This lets you establish a local connection to devices included in your virtual network using a bridge that has internet access or is on the same local network with internet.

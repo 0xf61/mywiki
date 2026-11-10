@@ -1,12 +1,13 @@
 ---
 title: Reflected Cross-Site Scripting (XSS)
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - xss
-  - reflected_xss
+  - reflected-xss
   - injection
+description: "Reflected Cross-Site Scripting (XSS) happens when an attacker puts bad code into a spot that's not protected. This code runs right away in the response without being saved on the server. Unlike…"
 ---
 
 Reflected Cross-Site Scripting (XSS) happens when an attacker puts bad code into a spot that's not protected. This code runs right away in the response without being saved on the server. Unlike stored XSS, where the code stays in the app's files, reflected XSS is temporary. The attacker usually makes a special link or form that the victim has to click or visit.
@@ -43,3 +44,9 @@ The response then reflects this script, causing the browser to run it whenever t
 1. **Use Server-Side Security Libraries and Frameworks**
 - If your framework supports auto-escaping or context-sensitive encoding, enable it by default.
 - Avoid crafting raw HTML strings by concatenating user input; instead, use templating systems that are XSS-aware.
+
+## Related Notes
+
+- [[stored-xss|Stored XSS]]
+- [[dom-xss|DOM-based XSS]]
+- [[injection-attacks|Injection Attacks]]

@@ -6,6 +6,7 @@ tags:
   - signal
   - android
   - backup
+description: "I recently upgraded my phone and tried to import my Signal backup but accidentally created an empty one, preventing me from restoring my old backup. Fortunately, I had a linked Signal desktop app…"
 ---
 
 I recently upgraded my phone and tried to import my Signal backup but accidentally created an empty one, preventing me from restoring my old backup. Fortunately, I had a linked Signal desktop app, which allowed me to recover parts of my chat history.

@@ -1,15 +1,16 @@
 ---
 title: Injection Attacks
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - injection
   - vulnerabilities
-  - sql_injection
+  - sql-injection
   - xss
-  - command_injection
+  - command-injection
   - xxe
+description: "Injection happens when someone puts bad input into an application, making it do things it shouldn't. This problem occurs when the application doesn't handle user input carefully, letting attackers…"
 ---
 
 Injection happens when someone puts bad input into an application, making it do things it shouldn't. This problem occurs when the application doesn't handle user input carefully, letting attackers control databases, computer systems, or other services behind the scenes. Injection attacks can cause data leaks, unauthorized access, running bad code remotely, and complete system takeover.
@@ -25,3 +26,13 @@ Common Problems:
 - Email Header Injection – Changing email headers to send spam or trick people
 
 To make these problems less likely, applications should use special queries with parameters, check and clean user input, escape special characters, use content security policies (CSP), and give backend services only the necessary permissions. Regular security checks, including automated scans and manual testing, are important to find and stop injection problems.
+
+## Related Notes
+
+- [[sql-injection|SQL Injection]]
+- [[code-injection|Code Injection]]
+- [[xxe|XML External Entity (XXE) Injection]]
+- [[reflected-xss|Reflected XSS]]
+- [[stored-xss|Stored XSS]]
+- [[dom-xss|DOM-based XSS]]
+- [[ssrf|Server-Side Request Forgery (SSRF)]]

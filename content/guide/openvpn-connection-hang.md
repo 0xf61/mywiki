@@ -9,6 +9,7 @@ tags:
   - macos
   - linux
   - windows
+description: "This guide covers common OpenVPN connection problems and their solutions across different platforms."
 ---
 
 This guide covers common OpenVPN connection problems and their solutions across different platforms.

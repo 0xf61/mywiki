@@ -1,13 +1,14 @@
 ---
 title: Data Tampering
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - data_tampering
+  - data-tampering
   - integrity
   - validation
-  - server_side_validation
+  - server-side-validation
+description: "Data tampering is a critical security vulnerability where unauthorized modifications are made to application data, either during transmission (man-in-the-middle attacks) or at rest (direct storage…"
 ---
 
 Data tampering is a critical security vulnerability where unauthorized modifications are made to application data, either during transmission (man-in-the-middle attacks) or at rest (direct storage manipulation). This attack compromises data integrity and can lead to privilege escalation, financial fraud, business logic bypass, and system compromise.

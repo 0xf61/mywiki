@@ -1,14 +1,15 @@
 ---
 title: IIS Tilde Enumeration
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - iis
-  - tilde_enumeration
-  - information_disclosure
-  - directory_enumeration
-  - microsoft_iis
+  - tilde-enumeration
+  - information-disclosure
+  - directory-enumeration
+  - microsoft-iis
+description: "IIS Tilde Enumeration (sometimes called the IIS Short Filename Vulnerability) uses the way old Windows systems used to support 8.3 short filenames."
 ---
 
 IIS Tilde Enumeration (sometimes called the IIS Short Filename Vulnerability) uses the way old Windows systems used to support 8.3 short filenames.

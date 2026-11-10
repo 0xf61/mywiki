@@ -1,15 +1,16 @@
 ---
 title: Sensitive Data Exposure
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
-  - sensitive_data_exposure
+  - sensitive-data-exposure
   - encryption
-  - cryptographic_failures
-  - data_protection
+  - cryptographic-failures
+  - data-protection
   - tls
   - ssl
+description: "Sensitive Data Exposure happens when a program accidentally shows secret or personal information, like passwords, credit card numbers, health records, or private business information. This can…"
 ---
 
 Sensitive Data Exposure happens when a program accidentally shows secret or personal information, like passwords, credit card numbers, health records, or private business information. This can happen if data isn't properly scrambled (or isn't scrambled at all), if data is stored in unsafe places, or if not enough rules are in place to control who can see the data. Attackers can use these weak spots to get into data while it's being sent (like through unsafe internet connections) or while it's stored (like in unprotected computer files).

@@ -5,6 +5,7 @@ date: 2025-05-31
 tags:
   - cookies
   - xss
+description: "In this post, I will talk about the 'cookie sandwich' trick. It can help you get around the HttpOnly flag on some servers. This is based on the idea from 'Bypassing WAFs with the phantom $Version…"
 ---
 
 In this post, I will talk about the "cookie sandwich" trick. It can help you get around the HttpOnly flag on some servers. This is based on the idea from "[Bypassing WAFs with the phantom $Version cookie](https://portswigger.net/research/bypassing-wafs-with-the-phantom-version-cookie)." If you look closely, old cookies let you put special characters in the cookie value. We will use this in this post.

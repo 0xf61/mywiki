@@ -1,14 +1,15 @@
 ---
 title: Cookie Flags - Security Configuration
 draft: false
-date: 2025-01-01
+date: 2026-10-18
 tags:
   - owasp
   - cookies
   - httponly
   - secure
   - samesite
-  - security_misconfiguration
+  - security-misconfiguration
+description: "Cookie Flags are like labels on cookies that tell your computer how to use them safely. If these labels aren't set right, bad people might be able to trick your computer or steal your information."
 ---
 
 Cookie Flags are like labels on cookies that tell your computer how to use them safely. If these labels aren't set right, bad people might be able to trick your computer or steal your information.
@@ -82,3 +83,9 @@ Set-Cookie: sessionid=abcd1234; Path=/; Secure; HttpOnly; SameSite=Lax;
 ```http
 Set-Cookie: sessionid=abcd1234; Path=/account; Secure; HttpOnly; SameSite=Strict;
 ```
+
+## Related Notes
+
+- [[http-security-headers|HTTP Security Headers]]
+- [[hsts|HTTP Strict Transport Security (HSTS)]]
+- [[session-fixation|Session Fixation]]

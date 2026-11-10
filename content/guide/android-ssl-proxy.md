@@ -2,11 +2,14 @@
 title: Android SSL Certificate - Burp Setup
 draft: false
 date: 2025-05-11
+aliases:
+  - androidsslproxy
 tags:
   - android
   - proxy
   - ssl
   - security
+description: "If you see the error The Client failed to negotiate an SSL Connection on the Burp Dashboard, you can fix it by installing the Burp CA certificate on the device at the SYSTEM level."
 ---
 
 If you see the error `The Client failed to negotiate an SSL Connection` on the Burp Dashboard, you can fix it by installing the Burp CA certificate on the device at the **SYSTEM** level.
