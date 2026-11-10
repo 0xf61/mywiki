@@ -6,12 +6,12 @@ tags:
   - bugfix
   - neovim
   - lazyvim
-description: "Hello! I got this error today (2025-05-10) which I seems like related to this PR."
+description: "Hello! I got this error today (2025-05-10) which seems to be related to this PR."
 ---
 
-Hello! I got this error today (2025-05-10) which I seems like related to this [PR](https://github.com/mason-org/mason.nvim/pull/1925).
+Hello! I got this error today (2025-05-10) which seems to be related to this [PR](https://github.com/mason-org/mason.nvim/pull/1925).
 
-```
+```text
 Failed to run `config` for nvim-lspconfig
 
 ...share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:215: module 'mason-lspconfig.mappings.server' not found:

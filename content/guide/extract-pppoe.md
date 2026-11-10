@@ -5,6 +5,7 @@ date: 2025-06-01
 tags:
   - pppoe
   - linux
+description: "Step-by-step guide to finding and extracting hidden PPPoE ISP credentials from your modem using Linux or Raspberry Pi."
 ---
 
 It's 2025, and some ISPs still hide these PPPoE login details. I don't really understand their logic. They don't want customers to use other devices, but why? I don't have the answer to this question. If you know, I would appreciate it if you could comment.
@@ -23,13 +24,13 @@ Let's include the necessary package in our Debian system and start preparing the
 
 This package allows you to connect to PPPoE service providers, but we will not connect; we will be a server.
 
-```
+```bash
 apt install pppoe
 ```
 
 Save the following in `/etc/ppp/options`. If you don't say `show-password`, it will not be logged properly, so take action accordingly. By default, this config also contains the `hide-password` line, don't be surprised and use it.
 
-```
+```conf
 # /etc/ppp/options
 #
 # Originally created by Jim Knoble <jmknoble@mercury.interpath.net>
@@ -92,13 +93,13 @@ Now plug in the modem and let it boot, let it request PPPoE from the port. Some 
 
 Now let's check our log.
 
-```
+```bash
 cat /var/log/pppoe-server.log
 ```
 
 Yes, as I thought, our information has arrived. If you are doing it on Superonline, you will see it as @fiber, if you are doing it on TTnet, you will see it as @ttnet, and if you are doing it on Turksat, you will see it as @tsat.
 
-```bash
+```log
 using channel 1
 Using interface ppp0
 Connect: ppp0

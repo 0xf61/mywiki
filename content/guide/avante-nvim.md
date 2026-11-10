@@ -8,10 +8,10 @@ tags:
   - neovim
   - lazyvim
   - ide
-description: "Here is the LazyVim configuration with using copilot sonnet with avante.nvim."
+description: "Here is the LazyVim configuration for using Copilot Sonnet with avante.nvim."
 ---
 
-Here is the LazyVim configuration with using copilot sonnet with [avante.nvim](https://github.com/yetone/avante.nvim).
+Here is the LazyVim configuration for using Copilot Sonnet with [avante.nvim](https://github.com/yetone/avante.nvim).
 
 ```lua
 return {

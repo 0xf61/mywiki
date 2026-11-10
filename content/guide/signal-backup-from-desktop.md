@@ -25,9 +25,9 @@ You don't have any messages, so there's nothing to lose on your Android phone. C
 
 Transfer the backup file that previously generated on android phone to PC. The file will be named something like `signal-2025-05-25-11-09-26.backup`, where the date and time reflect when the backup was created.
 
-Next let's grab signalbackup tools from [signal Backup tools on github](https://github.com/bepaald/signalbackup-tools)].
+Next let's grab signalbackup tools from [signal Backup tools on github](https://github.com/bepaald/signalbackup-tools).
 
-Nix users can use this comamnd instead
+Nix users can use this command instead:
 
 ```bash
 nix-shell --packages signalbackup-tools
@@ -43,7 +43,7 @@ In the command prompt, replace the 30 zeros with your Signal recovery passphrase
 signalbackup-tools ~/signal-2025-05-25-11-09-26.backup 000000000000000000000000000000 --importfromdesktop --output ~/signal-2025-05-25-11-09-27.backup
 ```
 
-If you're running the normal signal desktop path, signal backup tools will grab the files to rebuild a backup file, using the basically empty backup file as a reference. If your signal install is somewhere else, make you life easier and just copy those files to that location. This can take a bit of time, as shown below, so be patient.
+If you're running the normal signal desktop path, signal backup tools will grab the files to rebuild a backup file, using the basically empty backup file as a reference. If your signal install is somewhere else, make your life easier and just copy those files to that location. This can take a bit of time, as shown below, so be patient.
 
 ## Step 5: Copy and import
 

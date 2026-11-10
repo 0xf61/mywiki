@@ -6,6 +6,7 @@ tags:
   - archlinux
   - dns
   - caching
+description: "Configuration and performance tuning guide for pdnsd, a persistent caching DNS proxy server."
 ---
 
 [pdnsd](http://web.archive.org/web/20200323100334/http://members.home.nl/p.a.rombouts/pdnsd/index.html)
@@ -29,14 +30,14 @@ If your DNS server is slow, using `pdnsd` as a caching server can help. After do
 
 Under global settings:
 
-```
+```conf
 neg_rrs_pol=on;
 par_queries=1;
 ```
 
 Under server settings:
 
-```
+```conf
 proxy_only=on;
 purge_cache=off;
 ```
@@ -75,13 +76,13 @@ Shorter timeouts mean that pdnsd will give up on a query more quickly, resulting
 
 To see what servers pdnsd is using, how timeouts are working, and what default TTLs are being used, turn debug on in the global settings:
 
-```
+```conf
 debug=on;
 ```
 
 Restart pdnsd and watch the `pdnsd.service` for changes with the [systemd journal](https://wiki.archlinux.org/title/Systemd_journal "Systemd journal"):
 
-```
+```conf
 # journalctl -f -u pdnsd.service
 ```
 
@@ -95,11 +96,11 @@ To increase the cache size, edit the `perm_cache` line in the 'global settings' 
 
 Alternatively, you can prevent pdnsd from reading your hosts file by adding the option `authrec=off` to the 'source' section. If that does not work, create a separate hosts file (e.g., `/etc/hosts-pdnsd`) with only your system information and point your 'source' section to that instead.
 
-```
+```conf
 /etc/hosts-pdnsd
 ```
 
-```
+```conf
 #<ip-address> <hostname.domain.org> <hostname>
 127.0.0.1 localhost.localdomain my_hostname
 ::1 localhost.localdomain localhost
@@ -117,7 +118,7 @@ pdnsd allows you to block hosts or domains. Create a new `neg` section in `pdnsd
 
 Since you can only set one domain per block, it is better to create separate configuration files for lists of blocked domains, e.g., `/etc/pdnsd.d/spam_domains` and add an `include` section in `pdnsd.conf` like this:
 
-```
+```conf
 include {file="/etc/pdnsd.d/spam_domains";}
 ```
 
@@ -131,7 +132,7 @@ From [pdnsd-ctl(8) § DESCRIPTION](https://man.archlinux.org/man/pdnsd-ctl.8#D
 
 To do that, include the option
 
-```
+```conf
 status_ctl = on;
 ```
 
@@ -139,7 +140,7 @@ in the global section of the `/etc/pdnsd.conf`.
 
 If you changed the cache directory in `/etc/pdnsd.conf`, run `pdnsd-ctl` with the `-c` option:
 
-```
+```conf
 # pdnsd-ctl -c path/to/cache
 ```
 
@@ -147,13 +148,13 @@ Useful commands:
 
 View cache:
 
-```
+```conf
 # pdnsd-ctl dump
 ```
 
 Clear cache:
 
-```
+```conf
 # pdnsd-ctl empty-cache
 ```
 
@@ -163,23 +164,23 @@ Clear cache:
 
 If you can ping your internet provider's DNS server, but the log shows:
 
-```
+```conf
 # journalctl -f -u pdnsd.service
 ```
 
-```
+```conf
 result of uptest for 192.168.x.x: failed
 ```
 
 Check the interface configured in `/etc/pdnsd.conf`:
 
-```
+```conf
 interface = any;
 ```
 
 or the one in the server section:
 
-```
+```conf
 interface=enp2s0;
 ```
 
